@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  landingVC.swift
 //  nyuadCourseReview
 //
 //  Created by Ali Abouelatta on 8/8/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class landingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

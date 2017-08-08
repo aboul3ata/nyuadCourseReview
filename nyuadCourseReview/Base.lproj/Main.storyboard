@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LandingVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="landingVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,176 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-DC-Pu0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vbA-UI-B9Y">
+                                <rect key="frame" x="30" y="138" width="315" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="4aR-Ay-bo2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" red="0.41481143236160278" green="0.1231660470366478" blue="0.62114572525024414" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hYd-CR-0JC">
+                                <rect key="frame" x="62.5" y="318.5" width="250" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-zs-GbL">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BKb-Od-AFO"/>
+                                            <constraint firstAttribute="width" constant="250" id="wP9-0S-eIY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                        <state key="normal" title="Search by course">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="7tu-6K-j8C" kind="show" id="5Dz-yF-o5j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t01-4b-1DY">
+                                        <rect key="frame" x="0.0" y="80" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="SQj-zP-pF8"/>
+                                            <constraint firstAttribute="height" constant="50" id="sXc-tU-vuQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                        <state key="normal" title="Search by professor">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="7tu-6K-j8C" kind="show" id="YyO-98-XXD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyuad logo" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-sE-2KF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="mJo-kX-ZW6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ofy-DC-Pu0" secondAttribute="trailing" id="4GC-4Q-SR4"/>
+                            <constraint firstItem="vbA-UI-B9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="5IX-YW-1e8"/>
+                            <constraint firstItem="rb3-sE-2KF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="E30-ZK-CEV"/>
+                            <constraint firstItem="Ofy-DC-Pu0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gqd-14-M0V"/>
+                            <constraint firstItem="hYd-CR-0JC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="MXN-SE-IAA"/>
+                            <constraint firstItem="hYd-CR-0JC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qdd-XJ-mBG"/>
+                            <constraint firstItem="vbA-UI-B9Y" firstAttribute="top" secondItem="rb3-sE-2KF" secondAttribute="bottom" constant="8" id="Rh5-xG-Tn3"/>
+                            <constraint firstAttribute="trailing" secondItem="rb3-sE-2KF" secondAttribute="trailing" id="UGg-bm-foe"/>
+                            <constraint firstItem="Ofy-DC-Pu0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="acH-mi-URd"/>
+                            <constraint firstItem="rb3-sE-2KF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sap-4t-grf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ofy-DC-Pu0" secondAttribute="bottom" id="xh3-ew-dKe"/>
+                            <constraint firstAttribute="trailing" secondItem="vbA-UI-B9Y" secondAttribute="trailing" constant="30" id="xxb-gz-wWk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="37.5"/>
+        </scene>
+        <!--Select MajorVC-->
+        <scene sceneID="azV-bT-gMW">
+            <objects>
+                <viewController id="7tu-6K-j8C" customClass="selectMajorVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lQ8-zn-PCe"/>
+                        <viewControllerLayoutGuide type="bottom" id="zbC-RW-8PJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OuM-40-clR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ahS-Am-XmV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khI-G3-FfX">
+                                <rect key="frame" x="55.5" y="226.5" width="264" height="214"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXO-Yl-S6K">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="214"/>
+                                        <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fXO-Yl-S6K" secondAttribute="trailing" id="1rK-DP-lTG"/>
+                                    <constraint firstItem="fXO-Yl-S6K" firstAttribute="leading" secondItem="khI-G3-FfX" secondAttribute="leading" id="3MP-1f-ct6"/>
+                                    <constraint firstAttribute="width" constant="264" id="UOG-WA-3Dl"/>
+                                    <constraint firstItem="fXO-Yl-S6K" firstAttribute="top" secondItem="khI-G3-FfX" secondAttribute="top" id="YCb-15-Zin"/>
+                                    <constraint firstAttribute="bottom" secondItem="fXO-Yl-S6K" secondAttribute="bottom" id="gse-Ce-mrN"/>
+                                    <constraint firstAttribute="height" constant="214" id="gzC-FW-I05"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select department" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x2-ez-2FA">
+                                <rect key="frame" x="55.5" y="165" width="264" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.1737388959" green="0.1737388959" blue="0.1737388959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22h-ZH-Gsy">
+                                <rect key="frame" x="112.5" y="597" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="j73-Hm-qbL"/>
+                                    <constraint firstAttribute="height" constant="50" id="tAe-cc-SeR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zbC-RW-8PJ" firstAttribute="top" secondItem="ahS-Am-XmV" secondAttribute="bottom" id="4Lf-Ru-LFF"/>
+                            <constraint firstItem="ahS-Am-XmV" firstAttribute="top" secondItem="OuM-40-clR" secondAttribute="top" id="7ly-rq-s9Y"/>
+                            <constraint firstItem="ahS-Am-XmV" firstAttribute="leading" secondItem="OuM-40-clR" secondAttribute="leading" id="Wax-aQ-xQ3"/>
+                            <constraint firstItem="khI-G3-FfX" firstAttribute="centerX" secondItem="OuM-40-clR" secondAttribute="centerX" id="Wgq-8J-7Tk"/>
+                            <constraint firstItem="khI-G3-FfX" firstAttribute="centerY" secondItem="OuM-40-clR" secondAttribute="centerY" id="Z7b-BI-2eH"/>
+                            <constraint firstAttribute="trailing" secondItem="ahS-Am-XmV" secondAttribute="trailing" id="cXU-mW-PSr"/>
+                            <constraint firstItem="zbC-RW-8PJ" firstAttribute="top" secondItem="22h-ZH-Gsy" secondAttribute="bottom" constant="20" id="hHa-wJ-d5Z"/>
+                            <constraint firstItem="2x2-ez-2FA" firstAttribute="leading" secondItem="fXO-Yl-S6K" secondAttribute="leading" id="jlM-Pi-gGf"/>
+                            <constraint firstItem="22h-ZH-Gsy" firstAttribute="centerX" secondItem="OuM-40-clR" secondAttribute="centerX" id="uJH-0t-paW"/>
+                            <constraint firstItem="fXO-Yl-S6K" firstAttribute="top" secondItem="2x2-ez-2FA" secondAttribute="bottom" constant="34" id="uR8-ae-P6i"/>
+                            <constraint firstItem="2x2-ez-2FA" firstAttribute="trailing" secondItem="fXO-Yl-S6K" secondAttribute="trailing" id="zhf-dY-Plt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="fXO-Yl-S6K" id="4Xr-G7-4qP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfb-GP-A8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="45.42728635682159"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="375" height="599"/>
+        <image name="nyuad logo" width="375" height="142"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YyO-98-XXD"/>
+    </inferredMetricsTieBreakers>
 </document>
