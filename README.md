@@ -1,4 +1,4 @@
-# nyuadCourseReview
+# New York University Official Course Review
 The official app for New York University Abu Dhabi course review. 
 
 ### Whats special ?
