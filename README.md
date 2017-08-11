@@ -1,4 +1,5 @@
-# New York University Abu Dhabi Official Course Review - iOS app
+# New York University Abu Dhabi Official Course Review
+###### iOS app
 The official app for New York University Abu Dhabi course review. 
 
 ### Whats special ?
