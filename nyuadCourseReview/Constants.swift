@@ -50,6 +50,20 @@ var majors:[String: String] = [
     "WRIT-UH":"Writing",
     "VISAR-UH":"Visual Arts"
 ]
+var allTraits = [
+    "p1":["Amazing professor!!", "100000% recommend", "JUST THE BEST"],
+"p2":["knows the material", "learned ALOT", "Very keen"],
+"p3" : ["Easy A","lenient grader", " Guaranteed A"],
+"p4" : ["Chill course", "Light workload", "Laid back "],
+
+"n1" : ["BORING", "Material not intreseting", "Boring"],
+"n2" : ["Heavy work ","Heavy load","A lot of work!"],
+"n3" : ["Fair Grader","Fair Grader","Fair Grader"],
+"n4" : ["Strict Attendance","Strict Attendance","Strict Attendance"],
 
 
-
+"b1" : ["Strict grader","NOT AN EASY A","Harsh grader"],
+"b2" : ["Doesnt know  stuff","Seems lost","Not qualified"],
+"b3" : ["HORRIBLE PROFESSOR","Doesnt care at all","AWFUL PROFESSOR"],
+"b4" : ["AVOID AT ALL COSTS","AVOID AT ALL COSTS","AVOID AT ALL COSTS"],
+]

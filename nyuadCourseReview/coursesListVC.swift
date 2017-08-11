@@ -24,7 +24,7 @@ class coursesListVC: UIViewController{
 
     }
 
-
+    /*
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DataService.instance.getAllReviews { (returnedReviewsArray) in
@@ -32,22 +32,21 @@ class coursesListVC: UIViewController{
             self.tableView.reloadData()
         }
     }
+ */
  
 
-/* TEST DATA
+// TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        var test = Review(name: "xyz", prof: "xyzzzz", stars: [0:1,1:1], traits: ["hi":0], reviewBody: ["tssp","tspp2"])
+        let test = Review(name: "Digital Logic", prof: "Ozgur Sinanlu", stars: [0:1,1:1], traits: ["p1":2,"p2":3,"n2":7,"b1":8], reviewBody: ["tssp","tspp2"])
+        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n2":0,"b2":8], reviewBody: ["tssp","tspp2"])
+        let test3 = Review(name: "Advanced Controller", prof: "Peter Voltz", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n1":2,"b4":8], reviewBody: ["tssp","tspp2"])
         self.reviewsArray.append(test)
-                self.reviewsArray.append(test)
-                self.reviewsArray.append(test)
-                self.reviewsArray.append(test)
-                self.reviewsArray.append(test)
-                self.reviewsArray.append(test)
-                self.reviewsArray.append(test)
+                self.reviewsArray.append(test2)
+                self.reviewsArray.append(test3)
         self.tableView.reloadData()
     }
- */
+ 
 
 }
 

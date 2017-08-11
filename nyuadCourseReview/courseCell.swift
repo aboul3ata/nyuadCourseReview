@@ -36,7 +36,7 @@ class courseCell: UITableViewCell {
         
         if color == "n" {
 
-                        label.textColor = UIColor(colorLiteralRed: 247/255, green: 167/255, blue: 0/255, alpha: 1)
+        label.textColor = UIColor(colorLiteralRed: 247/255, green: 167/255, blue: 0/255, alpha: 1)
         }
         
         if color == "b"{
@@ -63,25 +63,42 @@ class courseCell: UITableViewCell {
             //by getting first letter in each trait
             
             let colorIndicator = traits[counter].characters
-            var char = String(colorIndicator[colorIndicator.startIndex])
+            let intermediateVariable = traits[counter]
+            let char = String(colorIndicator[colorIndicator.startIndex])
             
+            // getting the trait from stored dictionary of all traits found in constant
+            let randomQuoteNumber:Int = Int(arc4random_uniform(3)) ;
+            let quoteWanted = allTraits[intermediateVariable]
+            let quoteWanted2 = quoteWanted?[randomQuoteNumber]
             
             if counter == 0 {
                 setColorOfText(color: char, label: quote0)
-                quote0.text = "\(traits[0])"
+
+                if let quote = quoteWanted2 {
+                    quote0.text = "'\(quote)'"
+                }
+
             }
             
             
             if counter == 1 {
-                print("ALI counter 1 char is \(char) and label is \(quote1)")
+
                 setColorOfText(color: char, label: quote1)
-                quote1.text = "\(traits[1])"
+                
+                if let quote = quoteWanted2 {
+                    quote1.text = "'\(quote)'"
+                }
+
             }
             
 
             if counter == 2 {
                 setColorOfText(color: char, label: quote2)
-                quote2.text = "\(traits[2])"
+                
+                if let quote = quoteWanted2 {
+                    quote2.text = "'\(quote)'"
+                }
+
             }
 
             counter += 1
