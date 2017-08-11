@@ -18,6 +18,9 @@
 		41A2916F1F39AE1300BF08E3 /* selectMajorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2916E1F39AE1300BF08E3 /* selectMajorVC.swift */; };
 		41A291721F39AECE00BF08E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A291711F39AECE00BF08E3 /* Constants.swift */; };
 		41A291741F39DB0200BF08E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41A291731F39DB0200BF08E3 /* GoogleService-Info.plist */; };
+		41EEC2271F3CB75C0008E993 /* coursesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEC2261F3CB75C0008E993 /* coursesListVC.swift */; };
+		41EEC2291F3CBAE00008E993 /* courseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEC2281F3CBAE00008E993 /* courseCell.swift */; };
+		41EEC22B1F3CBDCC0008E993 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEC22A1F3CBDCC0008E993 /* Review.swift */; };
 		CE1B13B96833C07AAF97B449 /* Pods_nyuadCourseReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46F4BA91EA21F07B18C2EB /* Pods_nyuadCourseReview.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		41A2916E1F39AE1300BF08E3 /* selectMajorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectMajorVC.swift; sourceTree = "<group>"; };
 		41A291711F39AECE00BF08E3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		41A291731F39DB0200BF08E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41EEC2261F3CB75C0008E993 /* coursesListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coursesListVC.swift; sourceTree = "<group>"; };
+		41EEC2281F3CBAE00008E993 /* courseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = courseCell.swift; sourceTree = "<group>"; };
+		41EEC22A1F3CBDCC0008E993 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		CA46F4BA91EA21F07B18C2EB /* Pods_nyuadCourseReview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nyuadCourseReview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5D6EBC0C371AF45B3AD7D7 /* Pods-nyuadCourseReview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyuadCourseReview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyuadCourseReview/Pods-nyuadCourseReview.debug.xcconfig"; sourceTree = "<group>"; };
 		D1795BD94F6BD398CCCBB3DB /* Pods-nyuadCourseReview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyuadCourseReview.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyuadCourseReview/Pods-nyuadCourseReview.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 		41A291691F39A44900BF08E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				41EEC22A1F3CBDCC0008E993 /* Review.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -116,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				41A2916C1F39A47600BF08E3 /* roundBtn.swift */,
+				41EEC2281F3CBAE00008E993 /* courseCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 			children = (
 				41A291561F399F8F00BF08E3 /* landingVC.swift */,
 				41A2916E1F39AE1300BF08E3 /* selectMajorVC.swift */,
+				41EEC2261F3CB75C0008E993 /* coursesListVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -264,12 +273,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A291571F399F8F00BF08E3 /* landingVC.swift in Sources */,
+				41EEC2291F3CBAE00008E993 /* courseCell.swift in Sources */,
 				416471491F39DDD2006FB700 /* DataService.swift in Sources */,
 				41A2916D1F39A47600BF08E3 /* roundBtn.swift in Sources */,
 				41A2915D1F399F8F00BF08E3 /* nyuadCourseReview.xcdatamodeld in Sources */,
+				41EEC22B1F3CBDCC0008E993 /* Review.swift in Sources */,
 				41A2916F1F39AE1300BF08E3 /* selectMajorVC.swift in Sources */,
 				41A291551F399F8F00BF08E3 /* AppDelegate.swift in Sources */,
 				41A291721F39AECE00BF08E3 /* Constants.swift in Sources */,
+				41EEC2271F3CB75C0008E993 /* coursesListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

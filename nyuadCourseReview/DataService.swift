@@ -9,7 +9,8 @@
 import Foundation
 import Firebase
 
-let DB_BASE = Database.database().reference()
+let DB_BASE2 = Database.database().reference()
+let DB_BASE = DB_BASE2.child("Start").child("Courses").child("ANTH-UH")  // extra node in backend hence this weird format
 
 class DataService{
     static let instance = DataService()
@@ -17,7 +18,8 @@ class DataService{
     
     private var _REF_BASE = DB_BASE
     private var _REF_PROFESSORS = DB_BASE.child("professors")
-    private var _REF_COURSES = DB_BASE.child("courses")
+    //private var _REF_COURSES = DB_BASE.child("Courses")
+    private var _REF_COURSES = DB_BASE
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -31,5 +33,26 @@ class DataService{
         return _REF_COURSES
     }
     
+    
+    
+    // Retrieving all the reviews from Firebase
+    
+    func getAllReviews(handler: @escaping (_ messages: [Review]) -> ()) {
+        var reviewsArray = [Review]()
+        REF_COURSES.observeSingleEvent(of: .value, with: { (reviewSnapshot) in
+            guard let reviewSnapshot = reviewSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for x in reviewSnapshot {
+                let prof = x.childSnapshot(forPath: "Prof").value as! String
+                let name = x.childSnapshot(forPath: "Name").value as! String
+                let traits = x.childSnapshot(forPath: "Traits").value as? Dictionary<String, Int>
+                let review = Review(name: name, prof: prof, stars: [0:0,1:1], traits: traits!, reviewBody: ["love him","Hate him"])
+                reviewsArray.append(review)
+            }
+            
+            handler(reviewsArray)
+        })
+    }
+
     
 }
