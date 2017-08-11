@@ -16,6 +16,7 @@ class courseCell: UITableViewCell {
     @IBOutlet weak var quote1: UILabel!
     @IBOutlet weak var quote0: UILabel!
     @IBOutlet weak var quote2: UILabel!
+    @IBOutlet weak var reviewsLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,7 @@ class courseCell: UITableViewCell {
     
     
     // helper function for setting color
+    // used in congfigure cell
     func setColorOfText(color:String, label:UILabel){
         
         if color == "p" {
@@ -49,15 +51,17 @@ class courseCell: UITableViewCell {
     }
     
     
-    
-    func configureCell(name:String, prof:String, traits:[String]){
+    // Setting up the tableview CELLS
+    func configureCell(name:String, prof:String, traits:[String], reviewNum:Int ){
     
         courseLbl.text = name
         profLbl.text = "by \(prof)"
+        reviewsLbl.text = "\(reviewNum) reviews"
         
         var counter = 0
+        
+        //MARK: - setting up the Quotes aka Traits
         for _ in traits {
-            
             
             //setting colors of quotes
             //by getting first letter in each trait

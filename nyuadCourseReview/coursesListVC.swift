@@ -39,8 +39,8 @@ class coursesListVC: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let test = Review(name: "Digital Logic", prof: "Ozgur Sinanlu", stars: [0:1,1:1], traits: ["p1":2,"p2":3,"n2":7,"b1":8], reviewBody: ["tssp","tspp2"])
-        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n2":0,"b2":8], reviewBody: ["tssp","tspp2"])
-        let test3 = Review(name: "Advanced Controller", prof: "Peter Voltz", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n1":2,"b4":8], reviewBody: ["tssp","tspp2"])
+        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n2":0,"n4":8], reviewBody: ["tssp","tspp2"])
+        let test3 = Review(name: "Advanced Controller", prof: "Peter Voltz", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n1":2,"p4":8], reviewBody: ["tssp","tspp2"])
         self.reviewsArray.append(test)
                 self.reviewsArray.append(test2)
                 self.reviewsArray.append(test3)
@@ -51,7 +51,7 @@ class coursesListVC: UIViewController{
 }
 
 
-//Setting up tableview and configuring cells with Firebase data after download
+//MARK:- Setting up tableview and configuring cells with Firebase data after download
 extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,6 +72,7 @@ extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
         let prof = review.prof
         let traits2 = review.traits
         var traits = [String]()
+        let reviewsCount = review.reviewBody.count
         
         
         // Sorting Dictionary of Traits and retrieving top 3 only!
@@ -87,7 +88,7 @@ extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        cell.configureCell(name: name, prof: prof, traits: traits)
+        cell.configureCell(name: name, prof: prof, traits: traits, reviewNum: reviewsCount)
         return cell
     }
 
