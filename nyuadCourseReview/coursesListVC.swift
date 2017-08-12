@@ -14,6 +14,7 @@ class coursesListVC: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var reviewsArray = [Review]()
     
+
     
     
     
@@ -23,6 +24,7 @@ class coursesListVC: UIViewController{
         tableView.dataSource = self
 
     }
+
 
     /*
     override func viewDidAppear(_ animated: Bool) {
@@ -38,17 +40,22 @@ class coursesListVC: UIViewController{
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let test = Review(name: "Digital Logic", prof: "Ozgur Sinanlu", stars: [0:1,1:1], traits: ["p1":2,"p2":3,"n2":7,"b1":8], reviewBody: ["tssp","tspp2"])
-        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n2":0,"n4":8], reviewBody: ["tssp","tspp2"])
+        let test = Review(name: "Digital Logic", prof: "Ozgur Sinanlu", stars: [0:1,1:1], traits: ["p1":2,"p2":3,"p4":7,"b3":8], reviewBody: ["tssp","tspp2"])
+        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n2":7,"n4":8], reviewBody: ["tssp","tspp2"])
         let test3 = Review(name: "Advanced Controller", prof: "Peter Voltz", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n1":2,"p4":8], reviewBody: ["tssp","tspp2"])
         self.reviewsArray.append(test)
                 self.reviewsArray.append(test2)
                 self.reviewsArray.append(test3)
         self.tableView.reloadData()
     }
- 
+    
 
-}
+ 
+    @IBAction func writeReview2Pressed(_ sender: Any) {
+                performSegue(withIdentifier: "gotoReview", sender: nil)
+    }
+
+} // end of class
 
 
 //MARK:- Setting up tableview and configuring cells with Firebase data after download

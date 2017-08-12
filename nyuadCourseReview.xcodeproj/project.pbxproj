@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41421A611F3E783C00FD07EB /* writeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A601F3E783C00FD07EB /* writeReview.swift */; };
 		416471491F39DDD2006FB700 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416471481F39DDD2006FB700 /* DataService.swift */; };
 		41A291551F399F8F00BF08E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A291541F399F8F00BF08E3 /* AppDelegate.swift */; };
 		41A291571F399F8F00BF08E3 /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A291561F399F8F00BF08E3 /* landingVC.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41421A601F3E783C00FD07EB /* writeReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = writeReview.swift; sourceTree = "<group>"; };
 		416471481F39DDD2006FB700 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		41A291511F399F8F00BF08E3 /* nyuadCourseReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nyuadCourseReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A291541F399F8F00BF08E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				41A291561F399F8F00BF08E3 /* landingVC.swift */,
 				41A2916E1F39AE1300BF08E3 /* selectMajorVC.swift */,
 				41EEC2261F3CB75C0008E993 /* coursesListVC.swift */,
+				41421A601F3E783C00FD07EB /* writeReview.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				41A291551F399F8F00BF08E3 /* AppDelegate.swift in Sources */,
 				41A291721F39AECE00BF08E3 /* Constants.swift in Sources */,
 				41EEC2271F3CB75C0008E993 /* coursesListVC.swift in Sources */,
+				41421A611F3E783C00FD07EB /* writeReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

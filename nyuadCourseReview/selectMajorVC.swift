@@ -17,6 +17,9 @@ class selectMajorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         pickerView.delegate = self
     }
 
+    @IBAction func searchPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToCourses", sender: nil)
+    }
     
 // Setting up the picker view for all majors
     
