@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 let DB_BASE2 = Database.database().reference()
-let DB_BASE = DB_BASE2.child("Start").child("Courses").child("ANTH-UH")  // extra node in backend hence this weird format
+let DB_BASE = DB_BASE2.child("Start").child("Courses").child("ARABL-UH")  // extra node in backend hence this weird format
 
 class DataService{
     static let instance = DataService()

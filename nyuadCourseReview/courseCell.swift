@@ -45,7 +45,9 @@ class courseCell: UITableViewCell {
             label.textColor = UIColor.red
         }
         
-
+        if color == "x"{
+            label.textColor = UIColor(white: 0, alpha: 0.6)
+        }
         
         
     }
@@ -62,6 +64,13 @@ class courseCell: UITableViewCell {
         reviewsLbl.text = "\(reviewNum) reviews"
         
         var counter = 0
+        
+        quote0.text = "No reviews found"
+        quote1.text = " "
+        quote2.text = " "
+        setColorOfText(color: "x", label: quote0)
+        setColorOfText(color: "x", label: quote1)
+        setColorOfText(color: "x", label: quote2)
         
         //MARK: - setting up the Quotes aka Traits
         for _ in traits {

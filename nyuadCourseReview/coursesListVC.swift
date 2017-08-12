@@ -26,7 +26,7 @@ class coursesListVC: UIViewController{
     }
 
 
-    /*
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DataService.instance.getAllReviews { (returnedReviewsArray) in
@@ -34,9 +34,9 @@ class coursesListVC: UIViewController{
             self.tableView.reloadData()
         }
     }
- */
- 
 
+ 
+    /*
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,7 +49,7 @@ class coursesListVC: UIViewController{
         self.tableView.reloadData()
     }
     
-
+ */
  
     @IBAction func writeReview2Pressed(_ sender: Any) {
                 performSegue(withIdentifier: "gotoReview", sender: nil)
