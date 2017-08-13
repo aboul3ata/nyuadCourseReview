@@ -25,15 +25,23 @@ class viewCourseVC: UIViewController {
     @IBOutlet weak var num3: UILabel!
     @IBOutlet weak var num4: UILabel!
     
+    @IBOutlet weak var text1: UILabel!
     
+    @IBOutlet weak var text2: UILabel!
+
+    @IBOutlet weak var text3: UILabel!
+    
+    @IBOutlet weak var text4: UILabel!
 
     
-
-    
-
-    
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        // changing height dynamically
+        tableView.estimatedRowHeight = 140
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // Sorting Dictionary of Traits and retrieving top 3 only!
         
@@ -57,21 +65,34 @@ class viewCourseVC: UIViewController {
             switch x {
             case 0:
                 block1.isHidden = false
-                num1.text = "\(numArray[0]) \(valueArray[0]) "
-                
+                num1.text = "\(numArray[0])"
+                let char = String(valueArray[0][valueArray[0].startIndex])
+                let bgColor = getColor(indicator: char)
+                block1.backgroundColor = bgColor
+                text1.text = traitBtnLbls[valueArray[0]]
                 print("case 1")
             case 1:
                 block2.isHidden = false
-                num2.text = "\(numArray[1]) \(valueArray[1]) "
+                let char = String(valueArray[1][valueArray[1].startIndex])
+                let bgColor = getColor(indicator: char)
+                block2.backgroundColor = bgColor
+                num2.text = "\(numArray[1])"
+                text2.text = traitBtnLbls[valueArray[1]]
                 print("case 2")
             case 2:
                 block3.isHidden = false
-                num3.text = "\(numArray[2]) \(valueArray[2]) "
-                print("case 3")
+                let char = String(valueArray[2][valueArray[2].startIndex])
+                let bgColor = getColor(indicator: char)
+                block3.backgroundColor = bgColor
+                num3.text = "\(numArray[2])"
+                text3.text = traitBtnLbls[valueArray[2]]
             case 3:
                 block4.isHidden = false
-                num4.text = "\(numArray[3]) \(valueArray[3]) "
-                print("case 4")
+                let char = String(valueArray[3][valueArray[3].startIndex])
+                let bgColor = getColor(indicator: char)
+                block4.backgroundColor = bgColor
+                num4.text = "\(numArray[3])"
+                text4.text = traitBtnLbls[valueArray[3]]
             default:
                 print("default case")
             }
@@ -81,10 +102,46 @@ class viewCourseVC: UIViewController {
         
 
     }
-
-
     
+    func getColor (indicator:String) -> UIColor {
+        switch indicator {
+        case "p":
+            return greenColor
+        case "n":
+            return orangeColor
+        case "b":
+            return redColor
+        default:
+            return UIColor(white: 0, alpha: 0.6)
+        }
 
-
+    }
 
 }
+
+extension viewCourseVC: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return thecourse.reviewBody.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reviewBodyCell") as? reviewBodyCell else {
+            return UITableViewCell()
+        }
+        cell.configureCell(review: thecourse.reviewBody[indexPath.row])
+        return cell
+
+    
+    }
+
+}
+
+

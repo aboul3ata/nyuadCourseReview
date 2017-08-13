@@ -69,6 +69,20 @@ var allTraits = [
 "b4" : ["AVOID AT ALL COSTS","AVOID AT ALL COSTS","AVOID AT ALL COSTS"],
 ]
 
+var traitBtnLbls = [
+    "p1":"Best Class Ever",
+    "p2":"Material Master",
+    "p3":"Easy Grader",
+    "p4":"Readily Available",
+    "n1":"Boring",
+    "n2":"Heavy Workload",
+    "n3":"Fair Grader",
+    "n4":"Strict Attendance",
+    "b1":"Harsh Grader",
+    "b2":"Not Approachable",
+    "b3":"Horrible Lecturer",
+    "b4":"AVOID",
+]
 
 let purpleColor = UIColor(colorLiteralRed: 106/255, green: 31/255, blue: 158/255, alpha: 1)
 let orangeColor = UIColor(colorLiteralRed: 247/255, green: 167/255, blue: 0/255, alpha: 1)

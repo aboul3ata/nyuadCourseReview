@@ -29,6 +29,7 @@ class coursesListVC: UIViewController {
     }
 
 
+    /*
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -37,21 +38,20 @@ class coursesListVC: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+     */
  
-    /*
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let test = Review(name: "Digital Logic", prof: "Ozgur Sinanlu", stars: [0:1,1:1], traits: ["p1":2,"p2":3,"p4":7,"b3":8], reviewBody: ["tssp","tspp2"])
-        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n2":7,"n4":8], reviewBody: ["tssp","tspp2"])
-        let test3 = Review(name: "Advanced Controller", prof: "Peter Voltz", stars: [0:1,1:1], traits: ["p1":0,"p2":0,"n1":2,"p4":8], reviewBody: ["tssp","tspp2"])
+        let test = Review(name: "Digital Logic", prof: "Ozgur Sinanlu", stars: ["0":1,"1":1], traits: ["p1":2,"p2":3,"p4":7,"b3":8], reviewBody: ["tsspshihfa;oishoihusdhyysgisud sdys dtuyst duts duts d78 ds78t sd7tsodt sd ts87td8 s7td o87std8s7tdo87sdt8os7tdos87d ts8dt s7fto8f7sdto78fd fdhoy8fywefbyew8yfwe8 eowbfeow7b6few78bfe7w86fow87ft58weftaeei6a7f6it 7dgsi afe faf7 oe ea7t8sd fsdliflawefwe tfweig cewigtc twe l ewtfouft ostfw8t we8f woe fwe ftotfei7 sadf t7afd t7iwe t97weo 9efei tweft7 weft weft7wet 7wetweftfeit7dsftci7ysdft78 adftidvsftvdsfvtsdovitfdsoaovoaovfdsovsfovoa","tspp2","tsspshihfa;oishoihusdhyysgisud sdys dtuyst duts duts d78 ds78t sd7tsodt sd ts87td8 s7td o87std8s7tdo87sdt8os7tdos87d ts8dt s7fto8f7sdto78fd fdhoy8fywefbyew8yfwe8 eowbfeow7b6few78bfe7w86fow87ft58weftaeei6a7f6it 7dgsi afe faf7 oe ea7t8sd fsdliflawefwe tfweig cewigtc twe l ewtfouft ostfw8t we8f woe fwe ftotfei7 sadf t7afd t7iwe t97weo 9efei tweft7 weft weft7wet 7wetweftfeit7dsftci7ysdft78f adftidvsftvdsfvtsdovitfdsoaovoaovfdsovsfovoa"], ref: "abc")
+        let test2 = Review(name: "Circuits", prof: "Mohamed Eid", stars: ["0":1,"1":1], traits: ["p1":0,"p2":0,"n2":7,"n4":8], reviewBody: ["tssp","tspp2"], ref: "abc")
+        let test3 = Review(name: "Advanced Controller", prof: "Peter Voltz", stars: ["0":1,"1":1], traits: ["p1":0,"p2":0,"n1":2,"p4":8], reviewBody: ["tssp","tspp2"], ref: "abc")
         self.reviewsArray.append(test)
                 self.reviewsArray.append(test2)
                 self.reviewsArray.append(test3)
         self.tableView.reloadData()
     }
-     */
+
 
  
     @IBAction func writeReview2Pressed(_ sender: UIButton) {
