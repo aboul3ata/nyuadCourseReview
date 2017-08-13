@@ -54,17 +54,43 @@ class courseCell: UITableViewCell {
     }
     
     
+    @IBOutlet weak var circleImg: UIImageView!
 
+    @IBOutlet weak var noReviewTxt: UITextView!
     // Setting up the tableview CELLS
     func configureCell(name:String, prof:String, traits:[String], reviewNum:Int ){
     
         courseLbl.text = name
         profLbl.text = "by \(prof)"
+        
+        
+        if reviewNum != 0 {
         reviewsLbl.text = "\(reviewNum) reviews"
+            
+        reviewsLbl.isHidden = false
+        noReviewTxt.isHidden = true
+        circleImg.isHidden = false
+            
+        quote0.isHidden = false
+        quote1.isHidden = false
+        quote2.isHidden = false
+
+            
+        } else {
+            
+        reviewsLbl.isHidden = true
+        noReviewTxt.isHidden = false
+        circleImg.isHidden = true
+
+            
+        quote0.isHidden = true
+        quote1.isHidden = true
+        quote2.isHidden = true
+        }
         
         var counter = 0
         
-        quote0.text = "No reviews found"
+        quote0.text = " "
         quote1.text = " "
         quote2.text = " "
         setColorOfText(color: "x", label: quote0)

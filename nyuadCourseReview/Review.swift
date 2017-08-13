@@ -12,6 +12,7 @@ class Review {
 
 
     private var _name:String
+    private var _ref:String
     private var _prof:String
     private var _stars:[String:Int]
     private var _traits:[String:Int]
@@ -20,6 +21,10 @@ class Review {
     
     var name: String {
         return _name
+    }
+    
+    var ref: String {
+        return _ref
     }
 
     var prof: String {
@@ -41,12 +46,13 @@ class Review {
     
     
     
-    init(name:String, prof:String, stars:[String:Int], traits:[String:Int], reviewBody:[String]) {
+    init(name:String, prof:String, stars:[String:Int], traits:[String:Int], reviewBody:[String],ref:String) {
         self._name = name
         self._prof = prof
         self._traits = traits
         self._stars = stars
         self._reviewBody = reviewBody
+        self._ref = ref
     }
 
 

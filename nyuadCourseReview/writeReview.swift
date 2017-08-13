@@ -120,9 +120,9 @@ class writeReview: UIViewController {
         //getting traits
         //getting old values of traits from theCourse traits dictionary
         //sending new values of traits
-        let WANTED_REF_REVIEWS = DataService.instance.REF_COURSES.child("ARABL-UH 3110").child("Reviews")
-        let WANTED_REF_TRAITS = DataService.instance.REF_COURSES.child("ARABL-UH 3110").child("Traits")
-        let WANTED_REF_STARS = DataService.instance.REF_COURSES.child("ARABL-UH 3110").child("Stars")
+        let WANTED_REF_REVIEWS = DataService.instance.REF_COURSES.child(theCourse.ref).child("Reviews")
+        let WANTED_REF_TRAITS = DataService.instance.REF_COURSES.child(theCourse.ref).child("Traits")
+        let WANTED_REF_STARS = DataService.instance.REF_COURSES.child(theCourse.ref).child("Stars")
         
         if traitsArray.count != 0 {
             var traitsDict = [String:Int]()
@@ -159,7 +159,7 @@ class writeReview: UIViewController {
         
         //Adding review to Firebase
         
-        if textView.text != nil && textView.text != "write your reviews" {
+        if textView.text != nil && textView.text != "Write your review" {
             
             let postRefKey = WANTED_REF_REVIEWS.childByAutoId()
             
@@ -172,21 +172,14 @@ class writeReview: UIViewController {
             
             
             let starCount = theCourse.stars[FIRstars]! + 1
-
-            
             WANTED_REF_STARS.updateChildValues([FIRstars:starCount])
-            print("STARS SHIT HAPPENING \(FIRstars) \(starCount)")
+
 
         
         }
         
     }
 
-    
-    
-    
-    
-    
     
     
     

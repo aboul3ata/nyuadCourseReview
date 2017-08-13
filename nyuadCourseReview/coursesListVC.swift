@@ -104,7 +104,11 @@ extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
         let prof = review.prof
         let traits2 = review.traits
         var traits = [String]()
-        let reviewsCount = review.reviewBody.count
+        var reviewsCount = review.reviewBody.count
+        
+        if review.reviewBody[0] == "No comments yet available"{
+            reviewsCount = 0
+        }
   //      writeReviewBTN.tag = indexPath.row
         
         // Sorting Dictionary of Traits and retrieving top 3 only!

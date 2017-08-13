@@ -47,8 +47,26 @@ class DataService{
                 let name = x.childSnapshot(forPath: "Name").value as! String
                 let traits = x.childSnapshot(forPath: "Traits").value as? Dictionary<String, Int>
                 let stars = x.childSnapshot(forPath: "Stars").value as? Dictionary<String, Int>
-                print("starss are \(stars) \(x.childSnapshot(forPath: "Traits").value)")
-                let review = Review(name: name, prof: prof, stars:stars!, traits: traits!, reviewBody: ["love him","Hate him"])
+                let ref = x.childSnapshot(forPath: "Ref").value as! String
+                let commentsAll = x.childSnapshot(forPath: "Reviews").value as? Dictionary<String, String>
+                var commentsArray = [String]()
+                
+                
+                if let commentsAll = commentsAll {
+                
+                    for (_,eachComment) in commentsAll {
+                        print ("ALi each \(eachComment)")
+                        commentsArray.append(eachComment)
+                    }
+                
+                } else {
+                    commentsArray = ["No comments yet available"]
+                
+                }
+                
+            
+                
+                let review = Review(name: name, prof: prof, stars:stars!, traits: traits!, reviewBody: commentsArray,ref:ref)
                 reviewsArray.append(review)
             }
             
