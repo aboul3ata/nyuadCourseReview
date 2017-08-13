@@ -34,16 +34,16 @@ class courseCell: UITableViewCell {
     func setColorOfText(color:String, label:UILabel){
         
         if color == "p" {
-            label.textColor = UIColor(colorLiteralRed: 63/255, green: 118/255, blue: 0/255, alpha: 1)
+            label.textColor = greenColor
         }
         
         if color == "n" {
 
-        label.textColor = UIColor(colorLiteralRed: 247/255, green: 167/255, blue: 0/255, alpha: 1)
+        label.textColor = orangeColor
         }
         
         if color == "b"{
-            label.textColor = UIColor.red
+            label.textColor = redColor
         }
         
         if color == "x"{
@@ -55,15 +55,15 @@ class courseCell: UITableViewCell {
     
     
     @IBOutlet weak var circleImg: UIImageView!
-
-    @IBOutlet weak var noReviewTxt: UITextView!
+    @IBOutlet weak var noReviewTxt: UILabel!
+    
     // Setting up the tableview CELLS
     func configureCell(name:String, prof:String, traits:[String], reviewNum:Int ){
     
         courseLbl.text = name
         profLbl.text = "by \(prof)"
         
-        
+        // change layout if no reviews availbe
         if reviewNum != 0 {
         reviewsLbl.text = "\(reviewNum) reviews"
             

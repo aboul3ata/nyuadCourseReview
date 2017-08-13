@@ -13,8 +13,7 @@ class coursesListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    @IBAction func aa(_ sender: Any) {
-    }
+
     
     var reviewsArray = [Review]()
     var wtdCourse:Review?
@@ -63,6 +62,8 @@ class coursesListVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+
         if segue.identifier == "goToReview"{
 
             let vc = segue.destination as! writeReview
@@ -70,10 +71,23 @@ class coursesListVC: UIViewController {
             wtdCourse = reviewsArray[btn.tag]
             if let wantedCourse = wtdCourse {
                 vc.theCourse = wantedCourse
-                print("ur segue is ready bruh")
             }
 
         }
+        
+        if segue.identifier == "gotoViewCourse" {
+        
+            let vc2 = segue.destination as! viewCourseVC
+            
+            let indexPath = sender as! IndexPath
+            let index = indexPath.row
+            wtdCourse = reviewsArray[index]
+            if let wantedCourse = wtdCourse {
+                vc2.thecourse = wantedCourse
+            }
+        
+        }
+ 
     }
  
 
@@ -126,6 +140,14 @@ extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
         
         cell.configureCell(name: name, prof: prof, traits: traits, reviewNum: reviewsCount)
         return cell
+    }
+    
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "gotoViewCourse", sender: indexPath)
     }
 
 }

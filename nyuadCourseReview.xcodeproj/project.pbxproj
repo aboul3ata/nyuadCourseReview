@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41327C281F4070EE00CF745F /* viewCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41327C271F4070EE00CF745F /* viewCourseVC.swift */; };
 		41421A611F3E783C00FD07EB /* writeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A601F3E783C00FD07EB /* writeReview.swift */; };
 		41421A641F3F80F900FD07EB /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A631F3F80F900FD07EB /* UIViewExt.swift */; };
 		41421A661F3F838B00FD07EB /* HideKeyboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41327C271F4070EE00CF745F /* viewCourseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewCourseVC.swift; sourceTree = "<group>"; };
 		41421A601F3E783C00FD07EB /* writeReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = writeReview.swift; sourceTree = "<group>"; };
 		41421A631F3F80F900FD07EB /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExt.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				41A2916E1F39AE1300BF08E3 /* selectMajorVC.swift */,
 				41EEC2261F3CB75C0008E993 /* coursesListVC.swift */,
 				41421A601F3E783C00FD07EB /* writeReview.swift */,
+				41327C271F4070EE00CF745F /* viewCourseVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				41EEC2291F3CBAE00008E993 /* courseCell.swift in Sources */,
 				416471491F39DDD2006FB700 /* DataService.swift in Sources */,
 				41A2916D1F39A47600BF08E3 /* roundBtn.swift in Sources */,
+				41327C281F4070EE00CF745F /* viewCourseVC.swift in Sources */,
 				41A2915D1F399F8F00BF08E3 /* nyuadCourseReview.xcdatamodeld in Sources */,
 				41EEC22B1F3CBDCC0008E993 /* Review.swift in Sources */,
 				41A2916F1F39AE1300BF08E3 /* selectMajorVC.swift in Sources */,
