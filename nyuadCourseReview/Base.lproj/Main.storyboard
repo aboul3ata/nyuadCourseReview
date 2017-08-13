@@ -418,6 +418,7 @@
                                             <outlet property="quote0" destination="tB5-HM-Wbp" id="Kb6-1A-ixG"/>
                                             <outlet property="quote1" destination="79Z-Kc-RDh" id="fbx-cb-dDA"/>
                                             <outlet property="quote2" destination="lDl-5P-Thr" id="Aat-6e-b5W"/>
+                                            <outlet property="reviewBtn" destination="eWQ-2d-Pkz" id="Wo5-O2-CBH"/>
                                             <outlet property="reviewsLbl" destination="uhb-sR-Phc" id="GHc-dk-8PH"/>
                                         </connections>
                                     </tableViewCell>
@@ -437,7 +438,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="omD-EQ-vDG" id="Hmz-kn-bGn"/>
-                        <segue destination="f0I-d8-5wI" kind="show" identifier="gotoReview" id="kxB-Z2-zMZ"/>
+                        <segue destination="f0I-d8-5wI" kind="show" identifier="goToReview" id="kxB-Z2-zMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipv-yu-mi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,8 +806,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="prof" destination="M8Q-Kb-aE8" id="9jv-MK-fmO"/>
                         <outlet property="starsImage" destination="YEP-0R-mu5" id="gOd-k6-1dg"/>
                         <outlet property="textView" destination="eSU-lE-nyy" id="JY5-Mp-JMr"/>
+                        <outlet property="theTitle" destination="4Vk-kj-RyS" id="1yB-wb-PNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvM-Mh-YTG" userLabel="First Responder" sceneMemberID="firstResponder"/>

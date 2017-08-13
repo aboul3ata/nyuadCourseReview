@@ -8,12 +8,16 @@
 
 import UIKit
 
-class coursesListVC: UIViewController{
+class coursesListVC: UIViewController {
 
-    
+
     @IBOutlet weak var tableView: UITableView!
-    var reviewsArray = [Review]()
+
+    @IBAction func aa(_ sender: Any) {
+    }
     
+    var reviewsArray = [Review]()
+    var wtdCourse:Review?
 
     
     
@@ -25,7 +29,7 @@ class coursesListVC: UIViewController{
 
     }
 
-
+    /*
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -34,9 +38,9 @@ class coursesListVC: UIViewController{
             self.tableView.reloadData()
         }
     }
-
+ */
  
-    /*
+
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,11 +53,30 @@ class coursesListVC: UIViewController{
         self.tableView.reloadData()
     }
     
- */
+
  
-    @IBAction func writeReview2Pressed(_ sender: Any) {
-                performSegue(withIdentifier: "gotoReview", sender: nil)
+    @IBAction func writeReview2Pressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToReview", sender: sender)
+        
+
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToReview"{
+            print("segue stuff 1 \(sender)")
+            let vc = segue.destination as! writeReview
+            let btn = sender as! UIButton
+            wtdCourse = reviewsArray[btn.tag]
+            if let wantedCourse = wtdCourse {
+                vc.theCourse = wantedCourse
+                print("ur segue is ready bruh")
+            }
+
+        }
+    }
+ 
+
 
 } // end of class
 
@@ -74,13 +97,15 @@ extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        
+        cell.reviewBtn.tag = indexPath.row
         let review = reviewsArray[indexPath.row]
         let name = review.name
         let prof = review.prof
         let traits2 = review.traits
         var traits = [String]()
         let reviewsCount = review.reviewBody.count
-        
+  //      writeReviewBTN.tag = indexPath.row
         
         // Sorting Dictionary of Traits and retrieving top 3 only!
         

@@ -18,6 +18,7 @@ class courseCell: UITableViewCell {
     @IBOutlet weak var quote2: UILabel!
     @IBOutlet weak var reviewsLbl: UILabel!
     
+    @IBOutlet weak var reviewBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -53,9 +54,7 @@ class courseCell: UITableViewCell {
     }
     
     
-    @IBAction func test(_ sender: Any) {
-        print("WTF")
-    }
+
     // Setting up the tableview CELLS
     func configureCell(name:String, prof:String, traits:[String], reviewNum:Int ){
     

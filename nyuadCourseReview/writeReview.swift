@@ -10,18 +10,29 @@ import UIKit
 
 class writeReview: UIViewController {
 
+    @IBOutlet weak var prof: UILabel!
+    @IBOutlet weak var theTitle: UILabel!
     @IBOutlet weak var starsImage: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
+    var theCourse:Review?
+    
     private var numTraitsSelected = 0
     private var traitsArray = [Int]()
-    var FirebaseStars:Int?
+    private var FirebaseStars:Int?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
         textView.delegate = self
+        if let theCourse = theCourse {
+            prof.text = " by \(theCourse.prof)"
+            theTitle.text = theCourse.name
+            
+        
+        }
+
         
         NotificationCenter.default.addObserver(self, selector: #selector(writeReview.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(writeReview.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
