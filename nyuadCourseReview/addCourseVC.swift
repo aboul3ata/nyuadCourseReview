@@ -8,16 +8,19 @@
 
 import UIKit
 
-class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var categoriePckr: UIPickerView!
-    @IBOutlet weak var inputTextView: UITextField!
+
+    @IBOutlet weak var nameTxt: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         categoriePckr.dataSource = self
         categoriePckr.delegate = self
+        nameTxt.delegate = self
+        nameTxt.becomeFirstResponder()
         //keyboard automatically opened
         self.hideKeyboard()
         //move text up to make room for keyboards
@@ -46,12 +49,14 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
 
     }
     
-    
+    /*
     @IBOutlet weak var categorieLbl: UILabel!
     @IBAction func beginEditing(_ sender: Any) {
+        categoriePckr.isHidden = true
+        categorieLbl.isHidden = true
         
     }
-
+ */
     
     
     
@@ -93,7 +98,7 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
-       
+        categoriePckr.isHidden = false
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -102,7 +107,6 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
-
     }
     
     
