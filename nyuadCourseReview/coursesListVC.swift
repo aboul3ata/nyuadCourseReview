@@ -29,7 +29,7 @@ class coursesListVC: UIViewController {
 
     }
 
-    /*
+
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,9 +38,9 @@ class coursesListVC: UIViewController {
             self.tableView.reloadData()
         }
     }
- */
- 
 
+ 
+    /*
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -52,7 +52,7 @@ class coursesListVC: UIViewController {
                 self.reviewsArray.append(test3)
         self.tableView.reloadData()
     }
-    
+     */
 
  
     @IBAction func writeReview2Pressed(_ sender: UIButton) {
@@ -64,7 +64,7 @@ class coursesListVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToReview"{
-            print("segue stuff 1 \(sender)")
+
             let vc = segue.destination as! writeReview
             let btn = sender as! UIButton
             wtdCourse = reviewsArray[btn.tag]

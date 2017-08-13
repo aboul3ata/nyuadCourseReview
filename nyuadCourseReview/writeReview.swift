@@ -15,11 +15,11 @@ class writeReview: UIViewController {
     @IBOutlet weak var starsImage: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
-    var theCourse:Review?
+    var theCourse:Review!
     
     private var numTraitsSelected = 0
     private var traitsArray = [Int]()
-    private var FirebaseStars:Int?
+    private var FirebaseStars:String?
     
 
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class writeReview: UIViewController {
     @IBAction func starsPressed (_ sender: UIButton){
         starsImage.image = UIImage(named: "Stars\(sender.tag)")
         print("BTN PRESSED")
-        FirebaseStars = sender.tag
+        FirebaseStars = ("s\(sender.tag)")
 
     }
     
@@ -111,40 +111,77 @@ class writeReview: UIViewController {
         
         
         var FirebaseTraitsArrray = [String]()
-        var FirebaseReview:String?
+
+
 
         
         
         
         //getting traits
-        for x in self.traitsArray {
+        //getting old values of traits from theCourse traits dictionary
+        //sending new values of traits
+        let WANTED_REF_REVIEWS = DataService.instance.REF_COURSES.child("ARABL-UH 3110").child("Reviews")
+        let WANTED_REF_TRAITS = DataService.instance.REF_COURSES.child("ARABL-UH 3110").child("Traits")
+        let WANTED_REF_STARS = DataService.instance.REF_COURSES.child("ARABL-UH 3110").child("Stars")
         
-            if let trait = traitsByBtnNum["\(x)"]{
+        if traitsArray.count != 0 {
+            var traitsDict = [String:Int]()
+        
+            //changing traits from btn num to proper Firebase format
+            //eg btn 2 pressed adds  p2 to FirebaseTraitsArray
+            for x in self.traitsArray {
+        
+                if let trait = traitsByBtnNum["\(x)"]{
                 FirebaseTraitsArrray.append(trait)
+                }
+            }
+        
+            //Getting current values of traits
+            // add one to desired ones
+            for x in FirebaseTraitsArrray {
+            
+                if let traitValue = theCourse?.traits[x] {
+                traitsDict[x] = traitValue + 1
+                }
+        }
+            
+            // uploading new values to firebase
+            
+            for (traitRef,traitVal) in traitsDict {
+            
+                WANTED_REF_TRAITS.updateChildValues([traitRef:traitVal])
+    
             }
 
+        } // end of traits stuff
+        
+        
+        
+        //Adding review to Firebase
+        
+        if textView.text != nil && textView.text != "write your reviews" {
+            
+            let postRefKey = WANTED_REF_REVIEWS.childByAutoId()
+            
+            postRefKey.setValue(textView.text)
             
         }
         
-        //getting the review
-        if textView.text != nil && textView.text != "Write your review" {
+        // adding stars to firebase
+        if let FIRstars = FirebaseStars {
             
-            FirebaseReview = textView.text
+            
+            let starCount = theCourse.stars[FIRstars]! + 1
+
+            
+            WANTED_REF_STARS.updateChildValues([FIRstars:starCount])
+            print("STARS SHIT HAPPENING \(FIRstars) \(starCount)")
+
         
         }
-        
-        //getting the stars
-        if let FirebaseStars = self.FirebaseStars {
-            return
-        }
-        
-        
-        
-        
-        print("ALi Firebase stuff are \(FirebaseTraitsArrray) \(FirebaseReview) \(FirebaseStars)")
         
     }
-    
+
     
     
     

@@ -46,13 +46,22 @@ class DataService{
                 let prof = x.childSnapshot(forPath: "Prof").value as! String
                 let name = x.childSnapshot(forPath: "Name").value as! String
                 let traits = x.childSnapshot(forPath: "Traits").value as? Dictionary<String, Int>
-                let review = Review(name: name, prof: prof, stars: [0:0,1:1], traits: traits!, reviewBody: ["love him","Hate him"])
+                let stars = x.childSnapshot(forPath: "Stars").value as? Dictionary<String, Int>
+                print("starss are \(stars) \(x.childSnapshot(forPath: "Traits").value)")
+                let review = Review(name: name, prof: prof, stars:stars!, traits: traits!, reviewBody: ["love him","Hate him"])
                 reviewsArray.append(review)
             }
             
             handler(reviewsArray)
         })
     }
+    
+    
+    
+    
+    
+    
+    
 
     
 }
