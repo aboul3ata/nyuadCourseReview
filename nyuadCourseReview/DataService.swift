@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 let DB_BASE2 = Database.database().reference()
-let DB_BASE = DB_BASE2.child("Start").child("Courses").child("ARABL-UH")  // extra node in backend hence this weird format
+let DB_BASE = DB_BASE2.child("Start").child("Courses")  // extra node in backend hence this weird format
 
 class DataService{
     static let instance = DataService()
@@ -41,9 +41,9 @@ class DataService{
     
     // Retrieving all the reviews from Firebase
     
-    func getAllReviews(handler: @escaping (_ messages: [Review]) -> ()) {
+    func getAllReviews(categorie:String, handler: @escaping (_ messages: [Review]) -> ()) {
         var reviewsArray = [Review]()
-        REF_COURSES.observeSingleEvent(of: .value, with: { (reviewSnapshot) in
+        REF_COURSES.child(categorie).observeSingleEvent(of: .value, with: { (reviewSnapshot) in
             guard let reviewSnapshot = reviewSnapshot.children.allObjects as? [DataSnapshot] else { return }
             
             for x in reviewSnapshot {

@@ -13,8 +13,10 @@ class coursesListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var catTitle: UIButton!
 
-    
+
+    var selectedCategorie:String!
     var reviewsArray = [Review]()
     var wtdCourse:Review?
 
@@ -25,21 +27,24 @@ class coursesListVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        catTitle.setTitle(selectedCategorie, for: .normal)
     }
 
 
 
-
+     /*
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DataService.instance.getAllReviews { (returnedReviewsArray) in
+        let codeCat = majorsReversed[selectedCategorie]
+        if let codeCategorie = codeCat {
+        DataService.instance.getAllReviews(categorie: codeCategorie ){ (returnedReviewsArray) in
             self.reviewsArray = returnedReviewsArray.reversed()
             self.tableView.reloadData()
         }
+       }
     }
+     */
 
-     /*
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -52,7 +57,7 @@ class coursesListVC: UIViewController {
         self.tableView.reloadData()
     }
 
-     */
+
  
     @IBAction func writeReview2Pressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToReview", sender: sender)

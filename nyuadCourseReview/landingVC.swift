@@ -19,6 +19,8 @@ class landingVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func unwindToLanding(segue: UIStoryboardSegue) {}
 
 
 }

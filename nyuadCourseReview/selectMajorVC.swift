@@ -21,6 +21,18 @@ class selectMajorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.performSegue(withIdentifier: "goToCourses", sender: nil)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let code = Array(majors.values).sorted()
+        let categorie = code[pickerView.selectedRow(inComponent: 0)]
+        if segue.identifier == "goToCourses"{
+            
+            let vc = segue.destination as! coursesListVC
+            vc.selectedCategorie = categorie
+            
+        }
+    }
+    
 // Setting up the picker view for all majors
     
     
