@@ -17,6 +17,9 @@ class selectMajorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         pickerView.delegate = self
     }
 
+    
+    
+        @IBAction func unwindToMajorVC(segue: UIStoryboardSegue) {}
     @IBAction func searchPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "goToCourses", sender: nil)
     }
@@ -31,6 +34,9 @@ class selectMajorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             vc.selectedCategorie = categorie
             
         }
+    }
+    @IBAction func backPressed(_ sender: Any) {
+        self.performSegue(withIdentifier:"unwindToLanding" , sender: self)
     }
     
 // Setting up the picker view for all majors

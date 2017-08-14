@@ -19,6 +19,11 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     @IBOutlet weak var profTxt: UITextField!
     
+    @IBAction func backBtnpressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "unwindToCoursesList", sender: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -141,7 +141,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select department" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x2-ez-2FA">
-                                <rect key="frame" x="28" y="115.5" width="264" height="28"/>
+                                <rect key="frame" x="28" y="115" width="264" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.1737388959" green="0.1737388959" blue="0.1737388959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -166,11 +166,23 @@
                                     <action selector="searchPressed:" destination="7tu-6K-j8C" eventType="touchUpInside" id="Yqi-oq-YSF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOv-pn-bXD">
+                                <rect key="frame" x="16" y="20" width="30" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="18N-eS-OJK"/>
+                                    <constraint firstAttribute="width" constant="30" id="E6C-zE-klr"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="backbtn3"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="7tu-6K-j8C" eventType="touchUpInside" id="TC9-GH-7VS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zbC-RW-8PJ" firstAttribute="top" secondItem="ahS-Am-XmV" secondAttribute="bottom" id="4Lf-Ru-LFF"/>
                             <constraint firstItem="ahS-Am-XmV" firstAttribute="top" secondItem="OuM-40-clR" secondAttribute="top" id="7ly-rq-s9Y"/>
+                            <constraint firstItem="JOv-pn-bXD" firstAttribute="leading" secondItem="OuM-40-clR" secondAttribute="leadingMargin" id="AKE-4R-fJI"/>
                             <constraint firstItem="ahS-Am-XmV" firstAttribute="leading" secondItem="OuM-40-clR" secondAttribute="leading" id="Wax-aQ-xQ3"/>
                             <constraint firstItem="khI-G3-FfX" firstAttribute="centerX" secondItem="OuM-40-clR" secondAttribute="centerX" id="Wgq-8J-7Tk"/>
                             <constraint firstItem="khI-G3-FfX" firstAttribute="centerY" secondItem="OuM-40-clR" secondAttribute="centerY" id="Z7b-BI-2eH"/>
@@ -179,6 +191,7 @@
                             <constraint firstItem="2x2-ez-2FA" firstAttribute="leading" secondItem="fXO-Yl-S6K" secondAttribute="leading" id="jlM-Pi-gGf"/>
                             <constraint firstItem="22h-ZH-Gsy" firstAttribute="centerX" secondItem="OuM-40-clR" secondAttribute="centerX" id="uJH-0t-paW"/>
                             <constraint firstItem="fXO-Yl-S6K" firstAttribute="top" secondItem="2x2-ez-2FA" secondAttribute="bottom" constant="34" id="uR8-ae-P6i"/>
+                            <constraint firstItem="JOv-pn-bXD" firstAttribute="top" secondItem="lQ8-zn-PCe" secondAttribute="bottom" id="yuZ-Oe-VXY"/>
                             <constraint firstItem="2x2-ez-2FA" firstAttribute="trailing" secondItem="fXO-Yl-S6K" secondAttribute="trailing" id="zhf-dY-Plt"/>
                         </constraints>
                     </view>
@@ -191,7 +204,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfb-GP-A8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="QE4-Xw-bDL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1024.8" y="45.42728635682159"/>
+            <point key="canvasLocation" x="1023.75" y="45.422535211267608"/>
         </scene>
         <!--Courses ListVC-->
         <scene sceneID="ncx-D2-vl3">
@@ -241,14 +254,27 @@
                                             <segue destination="H4E-kA-yb2" kind="show" id="GcH-YL-usf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIG-7x-Teh">
+                                        <rect key="frame" x="8" y="10.5" width="30" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="ZGi-d4-jUm"/>
+                                            <constraint firstAttribute="width" constant="30" id="qrC-yH-Kgh"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="backbtn3"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="Wuk-Kl-tG2" eventType="touchUpInside" id="2pq-cK-daj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Xm0-1g-fAu" firstAttribute="centerY" secondItem="Sle-Az-NtO" secondAttribute="centerY" id="YPm-Sy-RmD"/>
                                     <constraint firstItem="B1H-be-TxK" firstAttribute="centerY" secondItem="NJV-Vn-dOT" secondAttribute="centerY" id="cCJ-4O-ENM"/>
                                     <constraint firstAttribute="height" constant="40" id="dav-Z2-H3d"/>
+                                    <constraint firstItem="ZIG-7x-Teh" firstAttribute="centerY" secondItem="NJV-Vn-dOT" secondAttribute="centerY" id="dzT-D9-ZBX"/>
                                     <constraint firstItem="B1H-be-TxK" firstAttribute="trailing" secondItem="Sle-Az-NtO" secondAttribute="trailingMargin" id="qqi-PB-ezk"/>
                                     <constraint firstItem="Xm0-1g-fAu" firstAttribute="centerX" secondItem="Sle-Az-NtO" secondAttribute="centerX" id="tuS-oo-Mja"/>
+                                    <constraint firstItem="ZIG-7x-Teh" firstAttribute="leading" secondItem="Sle-Az-NtO" secondAttribute="leadingMargin" id="xwF-CD-WH3"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="272" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omD-EQ-vDG">
@@ -445,11 +471,13 @@
                         <outlet property="tableView" destination="omD-EQ-vDG" id="Hmz-kn-bGn"/>
                         <segue destination="f0I-d8-5wI" kind="show" identifier="goToReview" id="kxB-Z2-zMZ"/>
                         <segue destination="nHF-hd-sXu" kind="show" identifier="gotoViewCourse" id="wIi-Ka-IH6"/>
+                        <segue destination="5vk-gl-zr2" kind="unwind" identifier="unwindToMajorVC" unwindAction="unwindToMajorVCWithSegue:" id="Qgc-37-afm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipv-yu-mi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5vk-gl-zr2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1755" y="35.91549295774648"/>
         </scene>
         <!--Add CourseVC-->
         <scene sceneID="XUc-Rf-6vH">
@@ -594,14 +622,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6z-at-9uF">
-                                <rect key="frame" x="16" y="32.5" width="15" height="15"/>
+                                <rect key="frame" x="16" y="33" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="M0m-Ss-ZIw"/>
                                     <constraint firstAttribute="height" constant="15" id="xRv-VZ-rHo"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="backBtn"/>
                                 <connections>
-                                    <segue destination="Wuk-Kl-tG2" kind="show" id="muF-vb-Vl9"/>
+                                    <action selector="backBtnpressed:" destination="H4E-kA-yb2" eventType="touchUpInside" id="Ay4-y1-jwM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -629,11 +657,13 @@
                         <outlet property="codeTxt" destination="Cbl-I8-tZa" id="kej-c6-Eul"/>
                         <outlet property="nameTxt" destination="6HE-IF-dRD" id="PJH-2B-lHK"/>
                         <outlet property="profTxt" destination="snb-nQ-lqi" id="RoK-60-DWL"/>
+                        <segue destination="tgf-L3-J1o" kind="unwind" identifier="unwindToCoursesList" unwindAction="unwindToCoursesListVCWithSegue:" id="GZ5-We-UR0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5f-nB-W4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tgf-L3-J1o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="833"/>
+            <point key="canvasLocation" x="1550.625" y="832.3943661971831"/>
         </scene>
         <!--View CourseVC-->
         <scene sceneID="ftC-Mw-hfM">
@@ -932,7 +962,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="backBtn"/>
                                 <connections>
-                                    <segue destination="Wuk-Kl-tG2" kind="show" id="GXB-JS-M9h"/>
+                                    <action selector="backBtnPressed:" destination="nHF-hd-sXu" eventType="touchUpInside" id="dsl-8m-CQW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -980,11 +1010,13 @@
                         <outlet property="text2" destination="XT2-wJ-0js" id="CMu-JV-a1P"/>
                         <outlet property="text3" destination="BIz-Ne-CCt" id="ILw-Gu-Uoi"/>
                         <outlet property="text4" destination="KAQ-xg-2p3" id="4CR-MP-2wC"/>
+                        <segue destination="kUe-fQ-WRX" kind="unwind" identifier="unwindToCoursesListVC2" unwindAction="unwindToCoursesListVC2WithSegue:" id="FQl-uL-sZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKY-V9-owK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kUe-fQ-WRX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2557.5999999999999" y="20.239880059970016"/>
+            <point key="canvasLocation" x="2558" y="44"/>
         </scene>
         <!--Write Review-->
         <scene sceneID="b1p-dH-pJ5">
@@ -1327,9 +1359,6 @@
                                     <constraint firstAttribute="height" constant="15" id="oZa-2E-n2P"/>
                                 </constraints>
                                 <state key="normal" title="Button" backgroundImage="backBtn"/>
-                                <connections>
-                                    <segue destination="Wuk-Kl-tG2" kind="show" id="6id-Wp-1hR"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1378,11 +1407,11 @@
         <image name="Oval2" width="80" height="74"/>
         <image name="Triangle Copy" width="76" height="75"/>
         <image name="backBtn" width="12" height="12"/>
+        <image name="backbtn3" width="537" height="268"/>
         <image name="bg" width="375" height="599"/>
         <image name="nyuad logo" width="375" height="142"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y6n-JU-lLo"/>
-        <segue reference="YyO-98-XXD"/>
+        <segue reference="0QL-xc-L0Z"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,7 +23,7 @@ class reviewBodyCell: UITableViewCell {
     }
     
     func configureCell (review:String) {
-        reviewBody.text = "         '' \(review)''"
+        reviewBody.text = "  '' \(review) '' "
     }
 
 }

@@ -103,6 +103,12 @@ class viewCourseVC: UIViewController {
 
     }
     
+    //Back btn pressed
+
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindToCoursesListVC2", sender: self)
+    }
+    
     func getColor (indicator:String) -> UIColor {
         switch indicator {
         case "p":
