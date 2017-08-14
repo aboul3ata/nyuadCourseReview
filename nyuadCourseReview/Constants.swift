@@ -51,6 +51,54 @@ var majors:[String: String] = [
     "WRIT-UH":"Writing",
     "VISAR-UH":"Visual Arts"
 ]
+
+
+var majorsReversed:[String: String] = [
+    "Anthropology":"ANTH-UH",
+    "Arab Crossroads":"ACS-UH",
+    "Arabic language":"ARABL-UH",
+    "Biology":"BIOL-UH",
+    "Business & Organization":"BUSOR-UH",
+    "Chemistry":"CHEM-UH",
+    "Chinese Language":"CHINL-UH",
+    "Computer Sciecne":"CS-UH",
+    "Core: Colloquium":"CCOL-UH",
+    "Core: Arts, Design and Tech":"CADT-UH",
+    "Core: Data and Discovery":"CDAD-UH",
+    "Core: Cultural Exploration":"CCEA-UH",
+    "Core: Structure of thought":"CSTS-UH",
+    "Economics":"ECON-UH",
+    "Engineering":"ENGR-UH",
+    "Engineering(graduate)":"ENGR-GH",
+    "French language":"FRENL-UH",
+    "History":"HIST-UH",
+    "History-AEP/ESP":"HISTN-UH",
+    "Film and New Media":"FILMM-UH",
+    "Legal Studies":"LAW-UH",
+    "Mathematics":"MATH-UH",
+    "Interactive media":"IM-UH",
+    "Music":"MUSIC-UH",
+    "Literature and creative writing":"LITCW-UH",
+    "Philosophy":"PHIL-UH",
+    "Media, Culture and Communication":"MCC-UH",
+    "Physics":"PHYS-UH",
+    "Peace studies":"PEACE-UH",
+    "Psychology":"PSYCH-UH",
+    "Physical Education":"PHYED-UH",
+    "Social Research and public policy":"SRPP-UH",
+    "Political Science":"POLSC-UH",
+    "The ancient World":"AW-UH",
+    "Science":"SCIEN-UH",
+    "University Studies":"UNIST-UH",
+    "Social sciences":"SOCSC-UH",
+    "Theater":"THEAT-UH",
+    "Writing":"WRIT-UH",
+    "Visual Arts":"VISAR-UH"
+]
+
+
+
+
 var allTraits = [
 "p1":["Amazing professor!!", "100000% recommend", "JUST THE BEST"],
 "p2":["knows the material", "learned ALOT", "Very keen"],

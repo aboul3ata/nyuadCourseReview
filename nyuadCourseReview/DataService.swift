@@ -15,11 +15,15 @@ let DB_BASE = DB_BASE2.child("Start").child("Courses").child("ARABL-UH")  // ext
 class DataService{
     static let instance = DataService()
     
-    
+    private var _REF_BASIC = Database.database().reference().child("Start").child("Courses")
     private var _REF_BASE = DB_BASE
     private var _REF_PROFESSORS = DB_BASE.child("professors")
     //private var _REF_COURSES = DB_BASE.child("Courses")
     private var _REF_COURSES = DB_BASE
+    
+    var REF_BASIC: DatabaseReference {
+        return _REF_BASIC
+    }
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -55,7 +59,6 @@ class DataService{
                 if let commentsAll = commentsAll {
                 
                     for (_,eachComment) in commentsAll {
-                        print ("ALi each \(eachComment)")
                         commentsArray.append(eachComment)
                     }
                 
@@ -76,7 +79,31 @@ class DataService{
     
     
     
-    
+    func addCourse(name:String,prof:String,categorie:String,code:String){
+        REF_BASIC.child(categorie).child(code).updateChildValues(["Prof":prof,"Name":name,"Stars":[
+            "s1":0,
+            "s2":0,
+            "s3":0,
+            "s4":0,
+            "s5":0,],"Traits":[
+            "p1":0,
+            "p2":0,
+            "p3":0,
+            "p4":0,
+            "n1":0,
+            "n2":0,
+            "n3":0,
+            "n4":0,
+            "b1":0,
+            "b2":0,
+            "b3":0,
+            "b4":0,],"Ref":code
+            ])
+        
+        
+        
+        
+    }
     
     
     

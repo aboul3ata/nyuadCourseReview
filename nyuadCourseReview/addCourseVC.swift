@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var categoriePckr: UIPickerView!
 
     @IBOutlet weak var nameTxt: UITextField!
+    
+    @IBOutlet weak var codeTxt: UITextField!
+    
+    @IBOutlet weak var profTxt: UITextField!
     
     
     override func viewDidLoad() {
@@ -23,9 +28,12 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         nameTxt.becomeFirstResponder()
         //keyboard automatically opened
         self.hideKeyboard()
+        categoriePckr.selectRow(10, inComponent: 0, animated: false)
         //move text up to make room for keyboards
+        /*
         NotificationCenter.default.addObserver(self, selector: #selector(addCourseVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addCourseVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    */
     }
 
 
@@ -49,14 +57,32 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
 
     }
     
-    /*
-    @IBOutlet weak var categorieLbl: UILabel!
-    @IBAction func beginEditing(_ sender: Any) {
-        categoriePckr.isHidden = true
-        categorieLbl.isHidden = true
+    
+    
+
+    
+    @IBAction func addCoursePressed(_ sender: Any) {
+        // look up PickerviewValue to get code of categorie
+        print(categoriePckr.selectedRow(inComponent: 0))
+        let code = Array(majors.values).sorted()
+        let categorie = code[categoriePckr.selectedRow(inComponent: 0)]
+        let categorieCode = majorsReversed[categorie]
+        
+        if let categorieText = categorieCode {
+            if let codeText = codeTxt.text {
+                if let nameText = nameTxt.text {
+                    if let profText = profTxt.text {
+                        DataService.instance.addCourse(name: nameText, prof: profText, categorie: categorieText, code: codeText)
+                    }
+                }
+            }
+    }
+    
+
+        
+        
         
     }
- */
     
     
     
@@ -88,8 +114,7 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     
     
-    
-    
+    /*
     // MARK:- Keyboard appearing forces text-field to move up
     
     func keyboardWillShow(notification: NSNotification) {
@@ -98,7 +123,6 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
-        categoriePckr.isHidden = false
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -108,7 +132,7 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             }
         }
     }
-    
+    */
     
 }
 
