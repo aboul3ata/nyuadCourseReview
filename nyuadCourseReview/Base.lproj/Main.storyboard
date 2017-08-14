@@ -205,62 +205,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sle-Az-NtO">
                                 <rect key="frame" x="0.0" y="20" width="320" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-cW-1Rn">
-                                        <rect key="frame" x="8" y="8" width="304" height="7"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-1g-fAu">
+                                        <rect key="frame" x="92" y="16" width="136" height="7"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-be-TxK">
-                                                <rect key="frame" x="0.0" y="0.0" width="67" height="7"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                <state key="normal" title="Add Course">
-                                                    <color key="titleColor" red="0.40000000000000002" green="0.44705882349999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJV-Vn-dOT">
+                                                <rect key="frame" x="0.0" y="0.0" width="129" height="7"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                <state key="normal" title="Anthropoloogu">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="H4E-kA-yb2" kind="show" id="GcH-YL-usf"/>
-                                                </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-1g-fAu">
-                                                <rect key="frame" x="85" y="0.0" width="136" height="7"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJV-Vn-dOT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="7"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                                        <state key="normal" title="Anthropoloogu">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1N-5g-cCk">
-                                                        <rect key="frame" x="129" y="0.0" width="7" height="7"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="7" id="Gtc-BP-sx5"/>
-                                                            <constraint firstAttribute="width" constant="7" id="el5-7A-Ed2"/>
-                                                        </constraints>
-                                                        <state key="normal" image="Triangle Copy"/>
-                                                    </button>
-                                                </subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1N-5g-cCk">
+                                                <rect key="frame" x="129" y="0.0" width="7" height="7"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="136" id="7Y0-un-uNT"/>
+                                                    <constraint firstAttribute="height" constant="7" id="Gtc-BP-sx5"/>
+                                                    <constraint firstAttribute="width" constant="7" id="el5-7A-Ed2"/>
                                                 </constraints>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehz-Rh-CRN">
-                                                <rect key="frame" x="241" y="0.0" width="63" height="7"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                <state key="normal" title="Add review">
-                                                    <color key="titleColor" red="0.40000000000000002" green="0.44705882349999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
+                                                <state key="normal" image="Triangle Copy"/>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Ehz-Rh-CRN" secondAttribute="trailing" id="Ndw-4W-crI"/>
-                                            <constraint firstItem="B1H-be-TxK" firstAttribute="leading" secondItem="0Fa-cW-1Rn" secondAttribute="leading" id="lLW-bk-yzU"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="136" id="7Y0-un-uNT"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-be-TxK">
+                                        <rect key="frame" x="245" y="5" width="67" height="29"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                        <state key="normal" title="Add Course">
+                                            <color key="titleColor" red="0.40000000000000002" green="0.44705882349999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="H4E-kA-yb2" kind="show" id="GcH-YL-usf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="0Fa-cW-1Rn" firstAttribute="top" secondItem="Sle-Az-NtO" secondAttribute="topMargin" id="3NG-LY-tCq"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="0Fa-cW-1Rn" secondAttribute="trailing" id="SgJ-Ig-3Y8"/>
+                                    <constraint firstItem="Xm0-1g-fAu" firstAttribute="centerY" secondItem="Sle-Az-NtO" secondAttribute="centerY" id="YPm-Sy-RmD"/>
+                                    <constraint firstItem="B1H-be-TxK" firstAttribute="centerY" secondItem="NJV-Vn-dOT" secondAttribute="centerY" id="cCJ-4O-ENM"/>
                                     <constraint firstAttribute="height" constant="40" id="dav-Z2-H3d"/>
-                                    <constraint firstItem="0Fa-cW-1Rn" firstAttribute="leading" secondItem="Sle-Az-NtO" secondAttribute="leadingMargin" id="s0K-35-40w"/>
+                                    <constraint firstItem="B1H-be-TxK" firstAttribute="trailing" secondItem="Sle-Az-NtO" secondAttribute="trailingMargin" id="qqi-PB-ezk"/>
+                                    <constraint firstItem="Xm0-1g-fAu" firstAttribute="centerX" secondItem="Sle-Az-NtO" secondAttribute="centerX" id="tuS-oo-Mja"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="272" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omD-EQ-vDG">
