@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IcR-EF-nth">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,99 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LandingVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="landingVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-DC-Pu0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vbA-UI-B9Y">
-                                <rect key="frame" x="30" y="138" width="260" height="102"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="102" id="4aR-Ay-bo2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="48"/>
-                                <color key="textColor" red="0.41481143236160278" green="0.1231660470366478" blue="0.62114572525024414" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hYd-CR-0JC">
-                                <rect key="frame" x="35" y="269" width="250" height="130"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-zs-GbL">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
-                                        <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="BKb-Od-AFO"/>
-                                            <constraint firstAttribute="width" constant="250" id="wP9-0S-eIY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                        <state key="normal" title="Search by course">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="7tu-6K-j8C" kind="show" id="5Dz-yF-o5j"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t01-4b-1DY">
-                                        <rect key="frame" x="0.0" y="80" width="250" height="50"/>
-                                        <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="SQj-zP-pF8"/>
-                                            <constraint firstAttribute="height" constant="50" id="sXc-tU-vuQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                        <state key="normal" title="Search by professor">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="7tu-6K-j8C" kind="show" id="YyO-98-XXD"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyuad logo" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-sE-2KF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="mJo-kX-ZW6"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Ofy-DC-Pu0" secondAttribute="trailing" id="4GC-4Q-SR4"/>
-                            <constraint firstItem="vbA-UI-B9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="5IX-YW-1e8"/>
-                            <constraint firstItem="rb3-sE-2KF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="E30-ZK-CEV"/>
-                            <constraint firstItem="Ofy-DC-Pu0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gqd-14-M0V"/>
-                            <constraint firstItem="hYd-CR-0JC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="MXN-SE-IAA"/>
-                            <constraint firstItem="hYd-CR-0JC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qdd-XJ-mBG"/>
-                            <constraint firstItem="vbA-UI-B9Y" firstAttribute="top" secondItem="rb3-sE-2KF" secondAttribute="bottom" constant="8" id="Rh5-xG-Tn3"/>
-                            <constraint firstAttribute="trailing" secondItem="rb3-sE-2KF" secondAttribute="trailing" id="UGg-bm-foe"/>
-                            <constraint firstItem="Ofy-DC-Pu0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="acH-mi-URd"/>
-                            <constraint firstItem="rb3-sE-2KF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sap-4t-grf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ofy-DC-Pu0" secondAttribute="bottom" id="xh3-ew-dKe"/>
-                            <constraint firstAttribute="trailing" secondItem="vbA-UI-B9Y" secondAttribute="trailing" constant="30" id="xxb-gz-wWk"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="138" y="45"/>
-        </scene>
         <!--Select MajorVC-->
         <scene sceneID="azV-bT-gMW">
             <objects>
@@ -1018,6 +925,24 @@
             </objects>
             <point key="canvasLocation" x="2558" y="44"/>
         </scene>
+        <!--TestingVC-->
+        <scene sceneID="6rs-se-ZYL">
+            <objects>
+                <viewController id="IcR-EF-nth" customClass="testingVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v6y-Tw-jA6"/>
+                        <viewControllerLayoutGuide type="bottom" id="T4T-ZZ-AXb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eh9-XY-7eD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gH-Ly-D07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="-1121"/>
+        </scene>
         <!--Write Review-->
         <scene sceneID="b1p-dH-pJ5">
             <objects>
@@ -1409,9 +1334,5 @@
         <image name="backBtn" width="12" height="12"/>
         <image name="backbtn3" width="537" height="268"/>
         <image name="bg" width="375" height="599"/>
-        <image name="nyuad logo" width="375" height="142"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="0QL-xc-L0Z"/>
-    </inferredMetricsTieBreakers>
 </document>
