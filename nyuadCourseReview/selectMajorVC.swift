@@ -19,7 +19,7 @@ class selectMajorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     
     
-        @IBAction func unwindToMajorVC(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToMajorVC(segue: UIStoryboardSegue) {}
     @IBAction func searchPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "goToCourses", sender: nil)
     }

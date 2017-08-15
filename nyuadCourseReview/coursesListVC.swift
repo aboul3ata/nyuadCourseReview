@@ -40,7 +40,7 @@ class coursesListVC: UIViewController {
 
 
 
-     /*
+ 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let codeCat = majorsReversed[selectedCategorie]
@@ -51,8 +51,8 @@ class coursesListVC: UIViewController {
         }
        }
     }
-     */
 
+    /*
 // TEST DATA
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -64,7 +64,7 @@ class coursesListVC: UIViewController {
                 self.reviewsArray.append(test3)
         self.tableView.reloadData()
     }
-
+     */
 
  
     @IBAction func writeReview2Pressed(_ sender: UIButton) {
@@ -84,6 +84,7 @@ class coursesListVC: UIViewController {
             wtdCourse = reviewsArray[btn.tag]
             if let wantedCourse = wtdCourse {
                 vc.theCourse = wantedCourse
+                vc.theCategorie = majorsReversed[selectedCategorie] // getting the categorie code and passing it on
             }
 
         }
@@ -97,6 +98,7 @@ class coursesListVC: UIViewController {
             wtdCourse = reviewsArray[index]
             if let wantedCourse = wtdCourse {
                 vc2.thecourse = wantedCourse
+                vc2.selectedCategorie = majorsReversed[selectedCategorie]
             }
         
         }

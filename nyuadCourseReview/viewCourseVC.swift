@@ -14,6 +14,7 @@ class viewCourseVC: UIViewController {
     var numArray = [String]()
     var valueArray = [String]()
     var thecourse:Review!
+    var selectedCategorie:String!
     
     @IBOutlet weak var block1: UIView!
     @IBOutlet weak var block2: UIView!
@@ -32,13 +33,26 @@ class viewCourseVC: UIViewController {
     @IBOutlet weak var text3: UILabel!
     
     @IBOutlet weak var text4: UILabel!
-
+    @IBOutlet weak var noReviewsPic: UIImageView!
     
+    @IBOutlet weak var profTitle: UILabel!
+    @IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //Setting up the course title
+        courseTitle.text = thecourse.name
+        profTitle.text = "by \(thecourse.prof)"
+        
+        
+        
+        if thecourse.reviewBody[0] == "No comments yet available" {
+            noReviewsPic.isHidden = false
+
+        }
         // changing height dynamically
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -122,9 +136,26 @@ class viewCourseVC: UIViewController {
         }
 
     }
+    
+    
+    @IBAction func reviewPressed(_ sender: Any) {
+        
+            self.performSegue(withIdentifier: "gotoWriteReview", sender: self)
+        
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoWriteReview"{
+            
+            let vc = segue.destination as! writeReview
+            vc.theCourse = thecourse
+            //getting the categorie of the course
+            vc.theCategorie = selectedCategorie
+            
+    }
 
 }
-
+}
 extension viewCourseVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {

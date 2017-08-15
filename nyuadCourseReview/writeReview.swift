@@ -16,11 +16,16 @@ class writeReview: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     var theCourse:Review!
+    var theCategorie:String!
     
     private var numTraitsSelected = 0
     private var traitsArray = [Int]()
     private var FirebaseStars:String?
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "unwindToCoursesListVC2", sender: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,9 +125,9 @@ class writeReview: UIViewController {
         //getting traits
         //getting old values of traits from theCourse traits dictionary
         //sending new values of traits
-        let WANTED_REF_REVIEWS = DataService.instance.REF_COURSES.child(theCourse.ref).child("Reviews")
-        let WANTED_REF_TRAITS = DataService.instance.REF_COURSES.child(theCourse.ref).child("Traits")
-        let WANTED_REF_STARS = DataService.instance.REF_COURSES.child(theCourse.ref).child("Stars")
+        let WANTED_REF_REVIEWS = DataService.instance.REF_COURSES.child(theCategorie).child(theCourse.ref).child("Reviews")
+        let WANTED_REF_TRAITS = DataService.instance.REF_COURSES.child(theCategorie).child(theCourse.ref).child("Traits")
+        let WANTED_REF_STARS = DataService.instance.REF_COURSES.child(theCategorie).child(theCourse.ref).child("Stars")
         
         if traitsArray.count != 0 {
             var traitsDict = [String:Int]()
@@ -177,8 +182,9 @@ class writeReview: UIViewController {
 
         
         }
+        self.performSegue(withIdentifier: "unwindToCoursesListVC2", sender: nil)
         
-    }
+    } // end of submit button
 
     
     
