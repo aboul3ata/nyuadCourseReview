@@ -15,8 +15,10 @@ class coursesListVC: UIViewController {
 
     @IBOutlet weak var catTitle: UIButton!
 
+    //seguess for cancelling the other views and returning to this one
     @IBAction func unwindToCoursesListVC(segue: UIStoryboardSegue) {}
     @IBAction func unwindToCoursesListVC2(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToCoursesListVC3(segue: UIStoryboardSegue) {}
     
     
     var selectedCategorie:String!

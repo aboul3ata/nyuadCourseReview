@@ -74,13 +74,15 @@ class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         let categorieCode = majorsReversed[categorie]
         
         if let categorieText = categorieCode {
-            if let codeText = codeTxt.text {
+            if let codeText = codeTxt.text?.uppercased() {
                 if let nameText = nameTxt.text {
                     if let profText = profTxt.text {
                         DataService.instance.addCourse(name: nameText, prof: profText, categorie: categorieText, code: codeText)
                     }
                 }
             }
+            
+        self.performSegue(withIdentifier: "unwindToCoursesListVC3", sender: self)
     }
     
 

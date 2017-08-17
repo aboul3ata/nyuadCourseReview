@@ -99,10 +99,6 @@ class DataService{
             "b3":0,
             "b4":0,],"Ref":code
             ])
-        
-        
-        
-        
     }
     
     
