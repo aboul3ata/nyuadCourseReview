@@ -54,6 +54,7 @@ class DataService{
                 let ref = x.childSnapshot(forPath: "Ref").value as! String
                 let commentsAll = x.childSnapshot(forPath: "Reviews").value as? Dictionary<String, String>
                 var commentsArray = [String]()
+
                 
                 
                 if let commentsAll = commentsAll {
@@ -135,22 +136,26 @@ class DataService{
     }
     
     //USED when searching to professor!
-    func loadSpecificCourses(referenceArray:[String],handler: @escaping (_ messages: [Review]) -> ()){
+    func loadSpecificCourses(prof:String,handler: @escaping (_ messages: [Review]) -> ()){
         
-        
-        
+        var referenceArray = [String]()
+        REF_PROFESSORS.child(prof).observeSingleEvent(of: .value, with: { (reviewSnapshot) in
+            guard let reviewSnapshot = reviewSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for x in reviewSnapshot {
+                referenceArray.append(x.value as! String)
+            }
+
         
         var reviewsArray = [Review]()
         for singleReference in referenceArray {
             
             let categoryReference = singleReference.components(separatedBy: " ").first
-            let Ref = REF_COURSES.child(categoryReference!)
+            let Ref = self.REF_COURSES.child(categoryReference!)
         
             Ref.queryOrdered(byChild: "Ref").queryEqual(toValue: singleReference).observe(.childAdded ,with: { (snapshot) in
             
                 if  let post = snapshot.value as? [String : AnyObject] {
                     
-                    let smth = post["Ref"] as! String
                     let prof =  post["Prof"] as! String
                     let name = post["Name"] as! String
                     let traits = post["Traits"] as? Dictionary<String, Int>
@@ -183,10 +188,10 @@ class DataService{
         
         }
         
-
+        })
+        
     }
 
-    
 
     
 }

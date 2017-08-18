@@ -21,7 +21,7 @@ class landingVC: UIViewController {
     }
     
     @IBAction func unwindToLanding(segue: UIStoryboardSegue) {}
-
+    @IBAction func unwindToLanding2(segue: UIStoryboardSegue) {}
 
 }
 

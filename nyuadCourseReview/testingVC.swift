@@ -13,7 +13,7 @@ class testingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 2211"]) { (returnedReviewsArray) in
+        DataService.instance.loadSpecificCourses(prof:"Adam Ramey") { (returnedReviewsArray) in
             print(returnedReviewsArray)
         }
         

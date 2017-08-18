@@ -10,6 +10,7 @@ import UIKit
 
 class ViewProfVC: UIViewController {
 
+    @IBOutlet weak var profTitle: UIButton!
     var selectedProf:String!
     @IBOutlet weak var tableView: UITableView!
     var reviewsArray = [Review]()
@@ -19,19 +20,26 @@ class ViewProfVC: UIViewController {
     @IBOutlet weak var thumbsDown: UILabel!
     @IBOutlet weak var thumbsNeutral: UILabel!
     @IBOutlet weak var thumbsup: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedProf)
         tableView.delegate = self
         tableView.dataSource = self
+        
+            profTitle.setTitle(selectedProf, for: .normal)
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        //Loading data from Firebase
         //DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 2211","ACS-UH 1010X"])
-        DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 1012X","ACS-UH 2410X"]) { (returnedReviewsArray) in
+        DataService.instance.loadSpecificCourses(prof:selectedProf) { (returnedReviewsArray) in
              self.reviewsArray = returnedReviewsArray.reversed()
             print(self.reviewsArray)
             self.tableView.reloadData()
@@ -40,9 +48,10 @@ class ViewProfVC: UIViewController {
             // setting up the percentages titles!
             // Int method to remove decimal point!
             let percentages = self.recommendedPercentages(reviews: self.reviewsArray)
+            print("ALI PERCENTAGES ARE \(percentages) \(self.reviewsArray[0].traits)")
             self.thumbsup.text = "\(Int(percentages["positive"]!))%"
             self.thumbsNeutral.text = "\(Int(percentages["neutral"]!))%"
-            self.thumbsDown.text = "\(Int(percentages["neutral"]!))%"
+            self.thumbsDown.text = "\(Int(percentages["negative"]!))%"
             
         }
     }
@@ -53,6 +62,10 @@ class ViewProfVC: UIViewController {
     }
     
     
+    @IBAction func backPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindToSelectProfVC", sender: self)
+    }
+
     //Calculating the different percentages for each trait
     // for thumbs up image
     func recommendedPercentages(reviews:[Review]) -> [String:Double]{
@@ -81,8 +94,16 @@ class ViewProfVC: UIViewController {
             }
         }
         let total = negative + positive + neutral
+        
+        // This if is needed cuz if total is zero
+        //0 divided by zero gives an error
+        if total == 0 {
+                let percentagesDict = ["positive":0.0,"neutral":0.0,"negative":0.0]
+                return percentagesDict
+        } else{
         let percentagesDict = ["positive":round(((positive*100.0)/total)),"neutral":round(((neutral*100.0)/total)),"negative":round(((negative*100.0)/total))]
         return percentagesDict
+        }
     }
     
     //Prepare for segue
@@ -155,8 +176,6 @@ class ViewProfVC: UIViewController {
             cell.configureCell(name: name, prof: prof, traits: traits, reviewNum: reviewsCount)
             return cell
         }
-        
-        
         
         
         

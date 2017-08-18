@@ -1524,6 +1524,9 @@
                                             <constraint firstAttribute="width" constant="10" id="Z3N-Vg-aC6"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="backbtn3"/>
+                                        <connections>
+                                            <action selector="backpressed:" destination="5q0-fA-g1W" eventType="touchUpInside" id="hm0-am-1aq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1555,9 +1558,11 @@
                     <connections>
                         <outlet property="pickerView" destination="jZt-qh-lxo" id="SSS-pc-Bh2"/>
                         <segue destination="6QF-G0-Vms" kind="show" identifier="goToProfList" id="6OO-gd-UAU"/>
+                        <segue destination="O7w-ra-eBJ" kind="unwind" identifier="unwindToLanding2" unwindAction="unwindToLanding2WithSegue:" id="gch-rH-GbR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvE-F3-aX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="O7w-ra-eBJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="822" y="851"/>
         </scene>
@@ -1610,6 +1615,9 @@
                                             <color key="titleColor" red="0.26792636510000001" green="0.4791455865" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="1" green="0.47233072920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backPressed:" destination="6QF-G0-Vms" eventType="touchUpInside" id="ALL-6o-59i"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1891,14 +1899,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profTitle" destination="RLQ-Mi-wCm" id="KzO-j2-LeC"/>
                         <outlet property="tableView" destination="PvA-aT-Ry8" id="Uck-Ix-241"/>
                         <outlet property="thumbsDown" destination="UrP-g5-fZD" id="2rq-mI-cKi"/>
                         <outlet property="thumbsNeutral" destination="7hR-mg-rjs" id="mYJ-l8-swa"/>
                         <outlet property="thumbsup" destination="hdp-I9-ABd" id="BK3-BF-n9x"/>
                         <segue destination="nHF-hd-sXu" kind="show" identifier="gotoViewCourse" id="u5a-02-P1i"/>
+                        <segue destination="5eM-N0-bkR" kind="unwind" identifier="unwindToSelectProfVC" unwindAction="unwindToSelectProfVCWithSegue:" id="phw-t7-WXl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYq-h6-1i4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5eM-N0-bkR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1708" y="850.52473763118451"/>
         </scene>
@@ -1918,6 +1929,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u5a-02-P1i"/>
-        <segue reference="kxB-Z2-zMZ"/>
+        <segue reference="r5K-Ba-utR"/>
     </inferredMetricsTieBreakers>
 </document>

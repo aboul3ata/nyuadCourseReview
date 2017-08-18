@@ -11,6 +11,7 @@ import UIKit
 class selectProfVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var pickerView: UIPickerView!
+        @IBAction func unwindToSelectProfVC(segue: UIStoryboardSegue) {}
     var profArray = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,10 @@ class selectProfVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSourc
             vc.selectedProf = profArray[indexOfProf]
             
         }
+    }
+
+    @IBAction func backpressed(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToLanding2", sender: nil)
     }
 
     
