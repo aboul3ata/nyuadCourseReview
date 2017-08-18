@@ -10,10 +10,41 @@ import UIKit
 
 class ViewProfVC: UIViewController {
 
+    var selectedProf:String!
+    @IBOutlet weak var tableView: UITableView!
+    var reviewsArray = [Review]()
+    var wtdCourse:Review?
+    
+    @IBAction func unwindToCoursesListVC2(segue: UIStoryboardSegue) {}
+    @IBOutlet weak var thumbsDown: UILabel!
+    @IBOutlet weak var thumbsNeutral: UILabel!
+    @IBOutlet weak var thumbsup: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedProf)
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 2211","ACS-UH 1010X"])
+        DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 1012X","ACS-UH 2410X"]) { (returnedReviewsArray) in
+             self.reviewsArray = returnedReviewsArray.reversed()
+            print(self.reviewsArray)
+            self.tableView.reloadData()
+            
+            
+            // setting up the percentages titles!
+            // Int method to remove decimal point!
+            let percentages = self.recommendedPercentages(reviews: self.reviewsArray)
+            self.thumbsup.text = "\(Int(percentages["positive"]!))%"
+            self.thumbsNeutral.text = "\(Int(percentages["neutral"]!))%"
+            self.thumbsDown.text = "\(Int(percentages["neutral"]!))%"
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +52,117 @@ class ViewProfVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //Calculating the different percentages for each trait
+    // for thumbs up image
+    func recommendedPercentages(reviews:[Review]) -> [String:Double]{
+        var positive = 0.0
+        var neutral = 0.0
+        var negative = 0.0
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        for review in reviews {
+            for (onetrait,num) in review.traits{
+                let clrIndicator = String(onetrait[onetrait.startIndex])
+                if clrIndicator == "p" {
+                    positive += Double(num)
+                
+                }
+            
+                if clrIndicator == "n" {
+                
+                    neutral += Double(num)
+                
+                }
+                
+                if clrIndicator == "b" {
+                    
+                    negative += Double(num)
+                }
+            }
+        }
+        let total = negative + positive + neutral
+        let percentagesDict = ["positive":round(((positive*100.0)/total)),"neutral":round(((neutral*100.0)/total)),"negative":round(((negative*100.0)/total))]
+        return percentagesDict
     }
-    */
+    
+    //Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoViewCourse" {
+            
+            let vc2 = segue.destination as! viewCourseVC
+            
+            let indexPath = sender as! IndexPath
+            let index = indexPath.row
+            wtdCourse = reviewsArray[index]
+            if let wantedCourse = wtdCourse {
+                vc2.thecourse = wantedCourse
+                // getting th category from reference of course as its seperated by space
+                vc2.selectedCategorie = majorsReversed[wantedCourse.ref.components(separatedBy: " ").first!]
+            }
+            
+        }
+    }
 
 }
+
+
+
+
+
+    //MARK:- Setting up tableview and configuring cells with Firebase data after download
+    extension ViewProfVC:UITableViewDelegate, UITableViewDataSource {
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return reviewsArray.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell2") as? courseCell2 else {
+                return UITableViewCell()
+            }
+            
+            
+            cell.reviewBtn.tag = indexPath.row
+            let review = reviewsArray[indexPath.row]
+            let name = review.name
+            let prof = review.prof
+            let traits2 = review.traits
+            var traits = [String]()
+            var reviewsCount = review.reviewBody.count
+            
+            if review.reviewBody[0] == "No comments yet available"{
+                reviewsCount = 0
+            }
+            //      writeReviewBTN.tag = indexPath.row
+            
+            // Sorting Dictionary of Traits and retrieving top 3 only!
+            
+            var counter = 0
+            for (k,v) in (Array(traits2).sorted {$0.1 > $1.1}) {
+                if counter < 3 {
+                    if v > 0 {
+                        traits.append(k)
+                    }
+                }
+                counter += 1
+            }
+            
+            
+            cell.configureCell(name: name, prof: prof, traits: traits, reviewNum: reviewsCount)
+            return cell
+        }
+        
+        
+        
+        
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            self.performSegue(withIdentifier: "gotoViewCourse", sender: indexPath)
+        }
+        
+    }
+

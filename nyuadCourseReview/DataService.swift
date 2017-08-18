@@ -134,7 +134,58 @@ class DataService{
             ])
     }
     
-    
+    //USED when searching to professor!
+    func loadSpecificCourses(referenceArray:[String],handler: @escaping (_ messages: [Review]) -> ()){
+        
+        
+        
+        
+        var reviewsArray = [Review]()
+        for singleReference in referenceArray {
+            
+            let categoryReference = singleReference.components(separatedBy: " ").first
+            let Ref = REF_COURSES.child(categoryReference!)
+        
+            Ref.queryOrdered(byChild: "Ref").queryEqual(toValue: singleReference).observe(.childAdded ,with: { (snapshot) in
+            
+                if  let post = snapshot.value as? [String : AnyObject] {
+                    
+                    let smth = post["Ref"] as! String
+                    let prof =  post["Prof"] as! String
+                    let name = post["Name"] as! String
+                    let traits = post["Traits"] as? Dictionary<String, Int>
+                    let stars = post["Stars"] as? Dictionary<String, Int>
+                    let ref = post["Ref"] as! String
+                    let commentsAll = post["Reviews"] as? Dictionary<String, String>
+                    var commentsArray = [String]()
+                    
+                    print()
+                    if let commentsAll = commentsAll {
+                        
+                        for (_,eachComment) in commentsAll {
+                            commentsArray.append(eachComment)
+                        }
+                        
+                    } else {
+                        commentsArray = ["No comments yet available"]
+                        
+                    }
+                    
+                    
+                    
+                    let review = Review(name: name, prof: prof, stars:stars!, traits: traits!, reviewBody: commentsArray,ref:ref)
+                    reviewsArray.append(review)
+                    
+                
+                }
+            handler(reviewsArray)
+            })
+        
+        }
+        
+
+    }
+
     
 
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5q0-fA-g1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,6 +69,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="5q0-fA-g1W" kind="show" id="Bl7-A1-4Sd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -174,8 +177,8 @@
                                     <action selector="searchPressed:" destination="7tu-6K-j8C" eventType="touchUpInside" id="Yqi-oq-YSF"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-o4-4fr">
-                                <rect key="frame" x="1" y="20" width="320" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-o4-4fr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOv-pn-bXD">
                                         <rect key="frame" x="8" y="8" width="10" height="20"/>
@@ -1521,9 +1524,6 @@
                                             <constraint firstAttribute="width" constant="10" id="Z3N-Vg-aC6"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="backbtn3"/>
-                                        <connections>
-                                            <action selector="backPressed:" destination="5q0-fA-g1W" eventType="touchUpInside" id="jT1-2h-koP"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1554,6 +1554,7 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="jZt-qh-lxo" id="SSS-pc-Bh2"/>
+                        <segue destination="6QF-G0-Vms" kind="show" identifier="goToProfList" id="6OO-gd-UAU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvE-F3-aX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1609,9 +1610,6 @@
                                             <color key="titleColor" red="0.26792636510000001" green="0.4791455865" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="1" green="0.47233072920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="backBtn:" destination="6QF-G0-Vms" eventType="touchUpInside" id="E4k-J7-2iH"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1627,7 +1625,7 @@
                                 <rect key="frame" x="0.0" y="210" width="375" height="457"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseCell" rowHeight="272" id="5ho-12-ZsC" customClass="courseCell" customModule="nyuadCourseReview" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseCell2" rowHeight="272" id="5ho-12-ZsC" customClass="courseCell2" customModule="nyuadCourseReview" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="272"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ho-12-ZsC" id="PEV-Bv-3vt">
@@ -1638,13 +1636,13 @@
                                                     <rect key="frame" x="7" y="11" width="363" height="250"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital logic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH1-li-6Bz">
-                                                            <rect key="frame" x="8" y="8" width="346" height="32"/>
+                                                            <rect key="frame" x="8" y="8" width="346" height="32.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
                                                             <color key="textColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Ozgur Sinanulu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clx-vL-ukN">
-                                                            <rect key="frame" x="8" y="36" width="105" height="17"/>
+                                                            <rect key="frame" x="8" y="36.5" width="105" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.44705882349999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1696,7 +1694,7 @@
                                                                     <rect key="frame" x="226" y="15" width="124" height="124"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooc-cb-fWE">
-                                                                            <rect key="frame" x="28" y="52" width="68" height="20"/>
+                                                                            <rect key="frame" x="28" y="52.5" width="68" height="19.5"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                                             <color key="textColor" red="0.40000000000000002" green="0.44705882349999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -1728,7 +1726,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no reviews yet for this course, let's change that together by leaving a review..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-hg-y4E">
-                                                            <rect key="frame" x="25" y="48" width="313" height="151"/>
+                                                            <rect key="frame" x="25" y="48.5" width="313" height="150.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1747,9 +1745,6 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesignSmall" value="YES"/>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="purpleBorder" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="writeReview2Pressed:" destination="6QF-G0-Vms" eventType="touchUpInside" id="b1a-zJ-Cmz"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1785,13 +1780,13 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="circleImg" destination="bhu-lA-38b" id="Acd-8K-8rK"/>
-                                            <outlet property="courseLbl" destination="sH1-li-6Bz" id="qRX-RV-Paa"/>
-                                            <outlet property="noReviewTxt" destination="XCd-hg-y4E" id="LP6-l0-sk6"/>
-                                            <outlet property="profLbl" destination="clx-vL-ukN" id="MOX-yR-niJ"/>
-                                            <outlet property="quote0" destination="4A4-R0-ucx" id="S43-oD-ByX"/>
-                                            <outlet property="quote1" destination="jY0-4F-SD4" id="lIU-hz-dgM"/>
-                                            <outlet property="quote2" destination="NPZ-7f-Flp" id="6wM-DF-ome"/>
-                                            <outlet property="reviewBtn" destination="Zdb-vc-6fl" id="pl1-jc-slv"/>
+                                            <outlet property="courseLbl" destination="sH1-li-6Bz" id="TdP-1C-icb"/>
+                                            <outlet property="noReviewTxt" destination="XCd-hg-y4E" id="qAD-4F-HhQ"/>
+                                            <outlet property="profLbl" destination="clx-vL-ukN" id="V9Z-u8-hQZ"/>
+                                            <outlet property="quote0" destination="4A4-R0-ucx" id="Leo-HO-umF"/>
+                                            <outlet property="quote1" destination="jY0-4F-SD4" id="xSX-H1-8Pk"/>
+                                            <outlet property="quote2" destination="NPZ-7f-Flp" id="Ef7-Hd-0s2"/>
+                                            <outlet property="reviewBtn" destination="Zdb-vc-6fl" id="WJA-Ix-xkL"/>
                                             <outlet property="reviewsLbl" destination="ooc-cb-fWE" id="axf-Yl-hFf"/>
                                         </connections>
                                     </tableViewCell>
@@ -1813,7 +1808,7 @@
                                                             <constraint firstAttribute="width" constant="50" id="zXh-eF-yDl"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdp-I9-ABd">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdp-I9-ABd">
                                                         <rect key="frame" x="0.0" y="50" width="50" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="clo-Dr-gAC"/>
@@ -1837,7 +1832,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="Edt-Fy-dg8"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hR-mg-rjs">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hR-mg-rjs">
                                                         <rect key="frame" x="21" y="50" width="50" height="60"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -1858,7 +1853,7 @@
                                                             <constraint firstAttribute="width" constant="50" id="P8s-cw-CAe"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-g5-fZD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-g5-fZD">
                                                         <rect key="frame" x="41.5" y="50" width="50" height="60"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -1896,8 +1891,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="catTitle" destination="RLQ-Mi-wCm" id="Qng-Wk-blC"/>
-                        <outlet property="tableView" destination="PvA-aT-Ry8" id="7bO-jS-yx9"/>
+                        <outlet property="tableView" destination="PvA-aT-Ry8" id="Uck-Ix-241"/>
+                        <outlet property="thumbsDown" destination="UrP-g5-fZD" id="2rq-mI-cKi"/>
+                        <outlet property="thumbsNeutral" destination="7hR-mg-rjs" id="mYJ-l8-swa"/>
+                        <outlet property="thumbsup" destination="hdp-I9-ABd" id="BK3-BF-n9x"/>
+                        <segue destination="nHF-hd-sXu" kind="show" identifier="gotoViewCourse" id="u5a-02-P1i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYq-h6-1i4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1919,6 +1917,7 @@
         <image name="thumbsup" width="98" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="u5a-02-P1i"/>
         <segue reference="kxB-Z2-zMZ"/>
     </inferredMetricsTieBreakers>
 </document>

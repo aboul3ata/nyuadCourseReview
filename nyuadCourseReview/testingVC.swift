@@ -12,8 +12,8 @@ class testingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //DataService.instance.createProfDataBase()
-        DataService.instance.getAllProf { (returnedReviewsArray) in
+
+        DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 2211"]) { (returnedReviewsArray) in
             print(returnedReviewsArray)
         }
         

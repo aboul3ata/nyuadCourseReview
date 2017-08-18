@@ -53,11 +53,6 @@ class writeReview: UIViewController {
 
     }
     
-    
-    
-    
-
-    
     // highlighting traits as they are selected/deselected
     // preparing traits for Firebase
     @IBAction func traitSelected(_ sender:UIButton){
@@ -211,12 +206,6 @@ class writeReview: UIViewController {
     }
 
 }
-
-
-
-
-
-
 
 
 

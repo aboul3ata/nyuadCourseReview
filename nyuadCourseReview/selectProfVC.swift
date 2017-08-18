@@ -31,7 +31,23 @@ class selectProfVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSourc
     
     
     
+    @IBAction func searchPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToProfList", sender: nil)
+    }
     
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        
+        if segue.identifier == "goToProfList"{
+            
+            let vc = segue.destination as! ViewProfVC
+            let indexOfProf = pickerView.selectedRow(inComponent: 0)
+            vc.selectedProf = profArray[indexOfProf]
+            
+        }
+    }
+
     
     //MARK:- Setting up pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

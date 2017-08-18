@@ -38,6 +38,8 @@ class viewCourseVC: UIViewController {
     @IBOutlet weak var profTitle: UILabel!
     @IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
