@@ -12,8 +12,11 @@ class testingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.uploadData()
-        // Do any additional setup after loading the view.
+        //DataService.instance.createProfDataBase()
+        DataService.instance.getAllProf { (returnedReviewsArray) in
+            print(returnedReviewsArray)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

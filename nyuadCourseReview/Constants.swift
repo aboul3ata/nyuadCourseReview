@@ -112,7 +112,7 @@ var allTraits = [
 
 
 "b1" : ["Strict grader","NOT AN EASY A","Harsh grader"],
-"b2" : ["Doesnt know  stuff","Seems lost","Not qualified"],
+"b2" : ["Don't learn Anything","Useless class","LEARNED NOTHING"],
 "b3" : ["HORRIBLE PROFESSOR","Doesnt care at all","AWFUL PROFESSOR"],
 "b4" : ["AVOID AT ALL COSTS","AVOID AT ALL COSTS","AVOID AT ALL COSTS"],
 ]
@@ -127,7 +127,7 @@ var traitBtnLbls = [
     "n3":"Fair Grader",
     "n4":"Strict Attendance",
     "b1":"Harsh Grader",
-    "b2":"Not Approachable",
+    "b2":"Learned Nothing",
     "b3":"Horrible Lecturer",
     "b4":"AVOID",
 ]

@@ -17,7 +17,7 @@ class DataService{
     
     private var _REF_BASIC = Database.database().reference().child("Start").child("Courses")
     private var _REF_BASE = DB_BASE
-    private var _REF_PROFESSORS = DB_BASE.child("professors")
+    private var _REF_PROFESSORS = Database.database().reference().child("Start").child("Professors")
     //private var _REF_COURSES = DB_BASE.child("Courses")
     private var _REF_COURSES = DB_BASE
     
@@ -77,7 +77,40 @@ class DataService{
         })
     }
     
+    //DO NOT USE THIS FUNCTION
+    //ONLY INTENDED FOR INITAL SETUP OF PROFS
+    //ONLY USE IF DB NEEDS TO BE UPDATED!
+    func createProfDataBase() {
+            REF_COURSES.observeSingleEvent(of: .value, with: { (reviewSnapshot) in
+            guard let reviewSnapshot = reviewSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for x in reviewSnapshot {
+                guard let y = x.children.allObjects as? [DataSnapshot] else { return }
+                for yz in y {
+                    let prof = yz.childSnapshot(forPath: "Prof").value as! String
+                    let course = yz.childSnapshot(forPath: "Ref").value as! String
+                    let REF_PROF = Database.database().reference().child("Start").child("Professors")
+                    let courseN = REF_PROF.child(prof).childByAutoId()
+                    courseN.setValue(course)
+                }
+            }
+        })
+    }
     
+    
+    func getAllProf(handler: @escaping (_ messages: [String]) -> ()) {
+        var profArray = [String]()
+        REF_PROFESSORS.observeSingleEvent(of: .value, with: { (reviewSnapshot) in
+            guard let reviewSnapshot = reviewSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for x in reviewSnapshot {
+                profArray.append(x.key)
+            }
+            
+            handler(profArray)
+        })
+    }
+
     
     func addCourse(name:String,prof:String,categorie:String,code:String){
         REF_BASIC.child(categorie).child(code).updateChildValues(["Prof":prof,"Name":name,"Stars":[
