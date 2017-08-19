@@ -20,6 +20,9 @@ class coursesListVC: UIViewController {
     @IBAction func unwindToCoursesListVC2(segue: UIStoryboardSegue) {}
     @IBAction func unwindToCoursesListVC3(segue: UIStoryboardSegue) {}
     
+        @IBAction func unwindToCoursesList(segue: UIStoryboardSegue) {}
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var selectedCategorie:String!
     var reviewsArray = [Review]()
@@ -37,6 +40,7 @@ class coursesListVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        self.activityIndicator.startAnimating()
         catTitle.setTitle(selectedCategorie, for: .normal)
     }
 
@@ -49,6 +53,8 @@ class coursesListVC: UIViewController {
         if let codeCategorie = codeCat {
         DataService.instance.getAllReviews(categorie: codeCategorie ){ (returnedReviewsArray) in
             self.reviewsArray = returnedReviewsArray.reversed()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             self.tableView.reloadData()
         }
        }

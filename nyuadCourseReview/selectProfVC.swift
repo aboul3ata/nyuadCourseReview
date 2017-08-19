@@ -10,11 +10,15 @@ import UIKit
 
 class selectProfVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var viewofProfs: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
         @IBAction func unwindToSelectProfVC(segue: UIStoryboardSegue) {}
     var profArray = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+                self.viewofProfs.isHidden = true
+                self.activityIndicator.startAnimating()
         pickerView.dataSource = self
         pickerView.delegate = self
     }
@@ -22,10 +26,15 @@ class selectProfVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSourc
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         DataService.instance.getAllProf { (returnedReviewsArray) in
             self.profArray = returnedReviewsArray
             self.pickerView.reloadAllComponents()
             print(returnedReviewsArray)
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+            self.viewofProfs.isHidden = false
+            
         }
     }
     
