@@ -112,6 +112,12 @@ class ViewProfVC: ViewControllerPannableHoriz {
         }
     }
     
+
+    
+    @IBAction func reviewbtnpressed(_ sender: UIButton) {
+                self.performSegue(withIdentifier: "gotoWriteReview", sender: sender)
+    }
+
     //Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoViewCourse" {
@@ -128,7 +134,25 @@ class ViewProfVC: ViewControllerPannableHoriz {
             }
             
         }
+        
+        
+        if segue.identifier == "gotoWriteReview" {
+            
+            let vc = segue.destination as! writeReview
+            let btn = sender as! UIButton
+            wtdCourse = reviewsArray[btn.tag]
+            print("ALI WANTED COURE IS\(wtdCourse)")
+            if let wantedCourse2 = wtdCourse {
+                print("ALi inside prepare for segue")
+                vc.theCourse = wantedCourse2
+                
+                // getting th category from reference of course as its seperated by space
+                vc.theCategorie = majorsReversed[wantedCourse2.ref.components(separatedBy: " ").first!]
+            }
+            
+        }
     }
+    
 
 }
 
