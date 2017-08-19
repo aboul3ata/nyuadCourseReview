@@ -59,7 +59,7 @@ var majorsReversed:[String: String] = [
     "Biology":"BIOL-UH",
     "Business & Organization":"BUSOR-UH",
     "Chemistry":"CHEM-UH",
-    "Chinese Language":"CHINL-UH",
+    "Chinese Language":"CHINYL-UH",
     "Computer Sciecne":"CS-UH",
     "Core: Colloquium":"CCOL-UH",
     "Core: Arts, Design and Tech":"CADT-UH",

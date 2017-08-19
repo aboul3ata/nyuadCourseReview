@@ -1663,7 +1663,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="175" id="aGW-0a-FZg"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="aGW-0a-FZg"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qd8-pI-N6j">
@@ -1993,7 +1993,7 @@
         <image name="thumbsup" width="98" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="u5a-02-P1i"/>
         <segue reference="kxB-Z2-zMZ"/>
-        <segue reference="wIi-Ka-IH6"/>
     </inferredMetricsTieBreakers>
 </document>
