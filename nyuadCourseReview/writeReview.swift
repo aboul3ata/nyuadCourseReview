@@ -214,6 +214,8 @@ class writeReview: ViewControllerPannable {
 // Removing placeholder text
 extension writeReview: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Write your review" {
         textView.text = ""
+        }
     }
 }
