@@ -34,8 +34,8 @@ class ViewControllerPannable: UIViewController {
         } else if panGesture.state == .ended {
             let velocity = panGesture.velocity(in: view)
             
-            if velocity.y >= 1500 {
-                UIView.animate(withDuration: 0.2
+            if velocity.y >= 700 {
+                UIView.animate(withDuration: 0.1
                     , animations: {
                         self.view.frame.origin = CGPoint(
                             x: self.view.frame.origin.x,
@@ -47,7 +47,7 @@ class ViewControllerPannable: UIViewController {
                     }
                 })
             } else {
-                UIView.animate(withDuration: 0.2, animations: {
+                UIView.animate(withDuration: 0.1, animations: {
                     self.view.center = self.originalPosition!
                 })
             }
