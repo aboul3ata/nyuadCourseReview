@@ -20,10 +20,16 @@ class coursesListVC: ViewControllerPannableHoriz {
     @IBAction func unwindToCoursesListVC(segue: UIStoryboardSegue) {}
     @IBAction func unwindToCoursesListVC2(segue: UIStoryboardSegue) {}
     @IBAction func unwindToCoursesListVC3(segue: UIStoryboardSegue) {}
-    
-        @IBAction func unwindToCoursesList(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToCoursesListVC4(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToCoursesList(segue: UIStoryboardSegue) {}
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    @IBOutlet weak var addProfBtn: UIButton!
+    
+    
+    
     
     var selectedCategorie:String!
     var reviewsArray = [Review]()
@@ -99,6 +105,24 @@ class coursesListVC: ViewControllerPannableHoriz {
 
         }
         
+        
+        
+        
+        if segue.identifier == "gotoAddProf"{
+            
+            let vc = segue.destination as! addProfVC
+            let btn = sender as! UIButton
+            wtdCourse = reviewsArray[btn.tag]
+            if let wantedCourse = wtdCourse {
+                vc.theCourse = wantedCourse
+                vc.theCategorie = majorsReversed[selectedCategorie] // getting the categorie code and passing it on
+            }
+            
+        }
+        
+        
+        
+        
         if segue.identifier == "gotoViewCourse" {
         
             let vc2 = segue.destination as! viewCourseVC
@@ -116,6 +140,16 @@ class coursesListVC: ViewControllerPannableHoriz {
     }
  
 
+    @IBAction func addProfSelected(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "gotoAddProf", sender: sender)
+        
+    }
+
+    
+    
+    
+    
 
 } // end of class
 
@@ -138,6 +172,8 @@ extension coursesListVC:UITableViewDelegate, UITableViewDataSource {
         
         
         cell.reviewBtn.tag = indexPath.row
+        cell.addProfBtn.tag = indexPath.row
+        cell.reviewBtn2.tag = indexPath.row
         let review = reviewsArray[indexPath.row]
         let name = review.name
         let prof = review.prof

@@ -18,6 +18,7 @@
 		41421A641F3F80F900FD07EB /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A631F3F80F900FD07EB /* UIViewExt.swift */; };
 		41421A661F3F838B00FD07EB /* HideKeyboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */; };
 		41421A681F3F885A00FD07EB /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A671F3F885A00FD07EB /* UIViewControllerExt.swift */; };
+		414451F71F48B73200C3CBF4 /* addProfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414451F61F48B73200C3CBF4 /* addProfVC.swift */; };
 		4162B2A91F41D6B20011158F /* testingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162B2A81F41D6B20011158F /* testingVC.swift */; };
 		416471491F39DDD2006FB700 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416471481F39DDD2006FB700 /* DataService.swift */; };
 		41A291551F399F8F00BF08E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A291541F399F8F00BF08E3 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		41421A631F3F80F900FD07EB /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExt.swift; sourceTree = "<group>"; };
 		41421A671F3F885A00FD07EB /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		414451F61F48B73200C3CBF4 /* addProfVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addProfVC.swift; sourceTree = "<group>"; };
 		4162B2A81F41D6B20011158F /* testingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testingVC.swift; sourceTree = "<group>"; };
 		416471481F39DDD2006FB700 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		41A291511F399F8F00BF08E3 /* nyuadCourseReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nyuadCourseReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 				4162B2A81F41D6B20011158F /* testingVC.swift */,
 				41344C661F472EDB0077EE60 /* selectProfVC.swift */,
 				41344C681F473E2D0077EE60 /* ViewProfVC.swift */,
+				414451F61F48B73200C3CBF4 /* addProfVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				41327C2C1F40F1A900CF745F /* addCourseVC.swift in Sources */,
 				41421A681F3F885A00FD07EB /* UIViewControllerExt.swift in Sources */,
 				4162B2A91F41D6B20011158F /* testingVC.swift in Sources */,
+				414451F71F48B73200C3CBF4 /* addProfVC.swift in Sources */,
 				41421A611F3E783C00FD07EB /* writeReview.swift in Sources */,
 				41327C2A1F40C6AA00CF745F /* reviewBodyCell.swift in Sources */,
 				41344C671F472EDB0077EE60 /* selectProfVC.swift in Sources */,

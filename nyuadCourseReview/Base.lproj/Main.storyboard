@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swt-0l-ECW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-784"/>
+            <point key="canvasLocation" x="254" y="-812"/>
         </scene>
         <!--Select MajorVC-->
         <scene sceneID="azV-bT-gMW">
@@ -467,7 +467,7 @@
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="purpleBorder" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
-                                                                        <action selector="writeReview2Pressed:" destination="Wuk-Kl-tG2" eventType="touchUpInside" id="XjM-hC-kSU"/>
+                                                                        <action selector="addProfSelected:" destination="Wuk-Kl-tG2" eventType="touchUpInside" id="KDA-E0-x0H"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixo-xj-Lio">
@@ -536,6 +536,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addProfBtn" destination="OlN-mk-OlE" id="smL-e0-bWM"/>
+                                            <outlet property="addprofBtn" destination="TVF-22-xXi" id="nvQ-x5-6k7"/>
                                             <outlet property="circleImg" destination="YW0-nP-r8q" id="VFI-r6-hmn"/>
                                             <outlet property="courseLbl" destination="60w-dv-Lsv" id="Y35-wZ-yn8"/>
                                             <outlet property="noReviewTxt" destination="W52-3n-zdD" id="CtZ-Lz-QQ1"/>
@@ -544,6 +546,7 @@
                                             <outlet property="quote1" destination="79Z-Kc-RDh" id="fbx-cb-dDA"/>
                                             <outlet property="quote2" destination="lDl-5P-Thr" id="Aat-6e-b5W"/>
                                             <outlet property="reviewBtn" destination="eWQ-2d-Pkz" id="Wo5-O2-CBH"/>
+                                            <outlet property="reviewBtn2" destination="ixo-xj-Lio" id="gxd-ia-VZV"/>
                                             <outlet property="reviewsLbl" destination="uhb-sR-Phc" id="GHc-dk-8PH"/>
                                         </connections>
                                     </tableViewCell>
@@ -575,6 +578,7 @@
                         <segue destination="f0I-d8-5wI" kind="show" identifier="goToReview" id="kxB-Z2-zMZ"/>
                         <segue destination="nHF-hd-sXu" kind="show" identifier="gotoViewCourse" id="wIi-Ka-IH6"/>
                         <segue destination="5vk-gl-zr2" kind="unwind" identifier="unwindToMajorVC" unwindAction="unwindToMajorVCWithSegue:" id="Qgc-37-afm"/>
+                        <segue destination="HEf-6k-oTz" kind="show" identifier="gotoAddProf" id="GkY-vx-phw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipv-yu-mi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2025,6 +2029,141 @@
                 <exit id="5eM-N0-bkR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1708" y="850.52473763118451"/>
+        </scene>
+        <!--Add ProfVC-->
+        <scene sceneID="8Xj-pc-5Ja">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="HEf-6k-oTz" customClass="addProfVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JJL-sG-Ahc"/>
+                        <viewControllerLayoutGuide type="bottom" id="NNZ-Hr-9B7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H2L-Iu-PQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-0q-VJN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-ic-i9T">
+                                <rect key="frame" x="56" y="227" width="264" height="214"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaT-2b-hfD">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="214"/>
+                                        <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="0I0-r2-jPq"/>
+                                    <constraint firstAttribute="width" constant="264" id="U94-pv-D7K"/>
+                                    <constraint firstItem="NaT-2b-hfD" firstAttribute="leading" secondItem="OQw-ic-i9T" secondAttribute="leading" id="U9U-X4-7f5"/>
+                                    <constraint firstItem="NaT-2b-hfD" firstAttribute="top" secondItem="OQw-ic-i9T" secondAttribute="top" id="Yhm-sZ-qrK"/>
+                                    <constraint firstAttribute="bottom" secondItem="NaT-2b-hfD" secondAttribute="bottom" id="Yyu-xL-wiD"/>
+                                    <constraint firstAttribute="trailing" secondItem="NaT-2b-hfD" secondAttribute="trailing" id="nBt-GM-HNI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who teaches this course?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKo-bJ-17L">
+                                <rect key="frame" x="56" y="171" width="264" height="22"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="0.62917380140000001" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct0-IR-BvH">
+                                <rect key="frame" x="113" y="612" width="150" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="UrI-I6-FB8"/>
+                                    <constraint firstAttribute="width" constant="150" id="oyd-MA-dds"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                <state key="normal" title="Add Professor">
+                                    <color key="titleColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="purpleBorder" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesignSmall" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addProfPressed:" destination="HEf-6k-oTz" eventType="touchUpInside" id="JFc-LB-lgj"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BA1-ok-XQA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lC-Vz-FIN">
+                                        <rect key="frame" x="8" y="8" width="10" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="Jgu-iV-gUr"/>
+                                            <constraint firstAttribute="height" constant="20" id="Mqc-zB-GPO"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="backbtn3"/>
+                                        <connections>
+                                            <action selector="backpressed:" destination="HEf-6k-oTz" eventType="touchUpInside" id="Ibu-PU-G9r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8lC-Vz-FIN" firstAttribute="top" secondItem="BA1-ok-XQA" secondAttribute="topMargin" id="3aK-fr-fUe"/>
+                                    <constraint firstAttribute="height" constant="40" id="LZp-39-Uiz"/>
+                                    <constraint firstItem="8lC-Vz-FIN" firstAttribute="leading" secondItem="BA1-ok-XQA" secondAttribute="leadingMargin" id="S32-xh-5ZK"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C1v-Sl-0cD">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contagion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="jma-Wz-dNm">
+                                <rect key="frame" x="26" y="83" width="323" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Trb-Mj-4g9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.78172089040000003" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BA1-ok-XQA" firstAttribute="top" secondItem="JJL-sG-Ahc" secondAttribute="bottom" id="Brn-zs-IwL"/>
+                            <constraint firstItem="C1v-Sl-0cD" firstAttribute="centerY" secondItem="H2L-Iu-PQ8" secondAttribute="centerY" id="CWJ-Zi-BF2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jma-Wz-dNm" secondAttribute="trailing" constant="10" id="For-7B-LAK"/>
+                            <constraint firstItem="dKo-bJ-17L" firstAttribute="trailing" secondItem="NaT-2b-hfD" secondAttribute="trailing" id="KU6-EL-rL9"/>
+                            <constraint firstAttribute="trailing" secondItem="BA1-ok-XQA" secondAttribute="trailing" id="MwT-2K-qf9"/>
+                            <constraint firstItem="jma-Wz-dNm" firstAttribute="top" secondItem="BA1-ok-XQA" secondAttribute="bottom" constant="23" id="SMY-b1-bn6"/>
+                            <constraint firstItem="ct0-IR-BvH" firstAttribute="centerX" secondItem="H2L-Iu-PQ8" secondAttribute="centerX" id="U0y-W7-isQ"/>
+                            <constraint firstItem="NNZ-Hr-9B7" firstAttribute="top" secondItem="cNk-0q-VJN" secondAttribute="bottom" id="al1-1Y-Ice"/>
+                            <constraint firstItem="dKo-bJ-17L" firstAttribute="leading" secondItem="NaT-2b-hfD" secondAttribute="leading" id="dp3-rZ-Iaq"/>
+                            <constraint firstItem="NaT-2b-hfD" firstAttribute="top" secondItem="dKo-bJ-17L" secondAttribute="bottom" constant="34" id="eQ6-x5-dEK"/>
+                            <constraint firstItem="C1v-Sl-0cD" firstAttribute="centerX" secondItem="H2L-Iu-PQ8" secondAttribute="centerX" id="ius-tJ-8Mb"/>
+                            <constraint firstItem="cNk-0q-VJN" firstAttribute="top" secondItem="JJL-sG-Ahc" secondAttribute="bottom" id="j2g-uj-JpC"/>
+                            <constraint firstItem="NNZ-Hr-9B7" firstAttribute="top" secondItem="ct0-IR-BvH" secondAttribute="bottom" constant="20" id="j39-az-MVe"/>
+                            <constraint firstItem="OQw-ic-i9T" firstAttribute="centerY" secondItem="H2L-Iu-PQ8" secondAttribute="centerY" id="jYI-1H-H9X"/>
+                            <constraint firstItem="OQw-ic-i9T" firstAttribute="centerX" secondItem="H2L-Iu-PQ8" secondAttribute="centerX" id="kdt-kj-eIJ"/>
+                            <constraint firstItem="BA1-ok-XQA" firstAttribute="leading" secondItem="H2L-Iu-PQ8" secondAttribute="leading" id="nFM-PM-y0r"/>
+                            <constraint firstItem="jma-Wz-dNm" firstAttribute="leading" secondItem="H2L-Iu-PQ8" secondAttribute="leadingMargin" constant="10" id="twr-gG-O5o"/>
+                            <constraint firstItem="cNk-0q-VJN" firstAttribute="leading" secondItem="H2L-Iu-PQ8" secondAttribute="leading" id="v6N-kV-ZTA"/>
+                            <constraint firstAttribute="trailing" secondItem="cNk-0q-VJN" secondAttribute="trailing" id="vM6-Hb-J6X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="C1v-Sl-0cD" id="wOj-Ph-YGD"/>
+                        <outlet property="courseLbl" destination="jma-Wz-dNm" id="JDU-Eu-BRz"/>
+                        <outlet property="pickerView" destination="NaT-2b-hfD" id="PM2-6j-bNu"/>
+                        <outlet property="viewofProfs" destination="OQw-ic-i9T" id="91G-LN-CEV"/>
+                        <segue destination="Rmm-uG-5ar" kind="unwind" identifier="unwindToCoursesListVC4" unwindAction="unwindToCoursesListVC4WithSegue:" id="nxG-3a-l5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bk-3d-mTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rmm-uG-5ar" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1752.8" y="-705.69715142428788"/>
         </scene>
     </scenes>
     <resources>

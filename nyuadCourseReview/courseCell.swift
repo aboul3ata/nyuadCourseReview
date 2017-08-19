@@ -19,6 +19,10 @@ class courseCell: UITableViewCell {
     @IBOutlet weak var reviewsLbl: UILabel!
     
     @IBOutlet weak var reviewBtn: UIButton!
+    
+    @IBOutlet weak var addProfBtn: UIButton!
+    
+    @IBOutlet weak var reviewBtn2: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -57,11 +61,24 @@ class courseCell: UITableViewCell {
     @IBOutlet weak var circleImg: UIImageView!
     @IBOutlet weak var noReviewTxt: UILabel!
     
+    @IBOutlet weak var addprofBtn: UIStackView!
     // Setting up the tableview CELLS
     func configureCell(name:String, prof:String, traits:[String], reviewNum:Int ){
     
         courseLbl.text = name
         profLbl.text = "by \(prof)"
+        
+        //check the prof is not unknown
+        // Make add prof button visible in that case
+        
+        if prof == "Unknown" {
+            reviewBtn.isHidden = true
+            addprofBtn.isHidden = false
+        } else {
+        
+            reviewBtn.isHidden = false
+            addprofBtn.isHidden = true
+        }
         
         // change layout if no reviews availbe
         if reviewNum != 0 {
