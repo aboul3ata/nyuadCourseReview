@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewProfVC: UIViewController {
+class ViewProfVC: ViewControllerPannableHoriz {
 
     @IBOutlet weak var thumbsBadPic: UIImageView!
     @IBOutlet weak var thumbsNeutralPic: UIImageView!

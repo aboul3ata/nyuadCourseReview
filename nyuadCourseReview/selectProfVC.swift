@@ -8,7 +8,7 @@
 
 import UIKit
 
-class selectProfVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+class selectProfVC: ViewControllerPannableHoriz,UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var viewofProfs: UIView!

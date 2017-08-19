@@ -8,7 +8,7 @@
 
 import UIKit
 
-class selectMajorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class selectMajorVC: ViewControllerPannableHoriz, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {

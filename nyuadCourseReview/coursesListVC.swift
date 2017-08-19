@@ -8,7 +8,7 @@
 
 import UIKit
 
-class coursesListVC: UIViewController {
+class coursesListVC: ViewControllerPannableHoriz {
 
 
     @IBOutlet weak var tableView: UITableView!

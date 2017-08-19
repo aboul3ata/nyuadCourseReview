@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413126F91F487B3D00E09AD6 /* ViewControllerPannableHoriz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413126F81F487B3D00E09AD6 /* ViewControllerPannableHoriz.swift */; };
 		41327C281F4070EE00CF745F /* viewCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41327C271F4070EE00CF745F /* viewCourseVC.swift */; };
 		41327C2A1F40C6AA00CF745F /* reviewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41327C291F40C6AA00CF745F /* reviewBodyCell.swift */; };
 		41327C2C1F40F1A900CF745F /* addCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41327C2B1F40F1A900CF745F /* addCourseVC.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		413126F81F487B3D00E09AD6 /* ViewControllerPannableHoriz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPannableHoriz.swift; sourceTree = "<group>"; };
 		41327C271F4070EE00CF745F /* viewCourseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewCourseVC.swift; sourceTree = "<group>"; };
 		41327C291F40C6AA00CF745F /* reviewBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reviewBodyCell.swift; sourceTree = "<group>"; };
 		41327C2B1F40F1A900CF745F /* addCourseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCourseVC.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				41327C291F40C6AA00CF745F /* reviewBodyCell.swift */,
 				41344C6A1F4774DB0077EE60 /* courseCell2.swift */,
 				41EA9C4B1F484C160017A12C /* ViewControllerPannable.swift */,
+				413126F81F487B3D00E09AD6 /* ViewControllerPannableHoriz.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				41421A611F3E783C00FD07EB /* writeReview.swift in Sources */,
 				41327C2A1F40C6AA00CF745F /* reviewBodyCell.swift in Sources */,
 				41344C671F472EDB0077EE60 /* selectProfVC.swift in Sources */,
+				413126F91F487B3D00E09AD6 /* ViewControllerPannableHoriz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

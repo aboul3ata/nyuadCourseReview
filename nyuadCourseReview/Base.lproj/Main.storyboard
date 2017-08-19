@@ -117,7 +117,7 @@
         <!--Select MajorVC-->
         <scene sceneID="azV-bT-gMW">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="7tu-6K-j8C" customClass="selectMajorVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="7tu-6K-j8C" customClass="selectMajorVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lQ8-zn-PCe"/>
                         <viewControllerLayoutGuide type="bottom" id="zbC-RW-8PJ"/>
@@ -1462,7 +1462,7 @@
         <!--Select ProfVC-->
         <scene sceneID="23I-J1-TWm">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="5q0-fA-g1W" customClass="selectProfVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="5q0-fA-g1W" customClass="selectProfVC" customModule="nyuadCourseReview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nPj-gU-Zha"/>
                         <viewControllerLayoutGuide type="bottom" id="Yi9-ol-Itv"/>
@@ -1947,7 +1947,7 @@
         <image name="thumbsup" width="98" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u5a-02-P1i"/>
         <segue reference="kxB-Z2-zMZ"/>
+        <segue reference="wIi-Ka-IH6"/>
     </inferredMetricsTieBreakers>
 </document>

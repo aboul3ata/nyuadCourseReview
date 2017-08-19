@@ -1,5 +1,5 @@
 //
-//  ViewControllerPannable.swift
+//  ViewControllerPannableHoriz.swift
 //  nyuadCourseReview
 //
 //  Created by Ali Abouelatta on 8/19/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewControllerPannable: UIViewController {
+class ViewControllerPannableHoriz: UIViewController {
     var panGestureRecognizer: UIPanGestureRecognizer?
     var originalPosition: CGPoint?
     var currentPositionTouched: CGPoint?
@@ -29,17 +29,17 @@ class ViewControllerPannable: UIViewController {
         } else if panGesture.state == .changed {
             view.frame.origin = CGPoint(
                 x: translation.x,
-                y: translation.y
+                y: self.view.frame.origin.y
             )
         } else if panGesture.state == .ended {
             let velocity = panGesture.velocity(in: view)
             
-            if velocity.y >= 700 {
+            if velocity.x >= 300 {
                 UIView.animate(withDuration: 0.7
                     , animations: {
                         self.view.frame.origin = CGPoint(
-                            x: self.view.frame.origin.x,
-                            y: self.view.frame.size.height
+                            x: self.view.frame.size.width,
+                            y: self.view.frame.origin.y
                         )
                 }, completion: { (isCompleted) in
                     if isCompleted {
