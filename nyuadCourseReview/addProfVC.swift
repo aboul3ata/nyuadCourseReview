@@ -38,7 +38,7 @@ class addProfVC: ViewControllerPannableHoriz,UIPickerViewDelegate, UIPickerViewD
         super.viewDidAppear(animated)
         
         DataService.instance.getAllProf { (returnedReviewsArray) in
-            self.profArray = returnedReviewsArray
+            self.profArray = returnedReviewsArray.sorted()
             self.pickerView.reloadAllComponents()
             print(returnedReviewsArray)
             self.activityIndicator.stopAnimating()
@@ -105,11 +105,11 @@ class addProfVC: ViewControllerPannableHoriz,UIPickerViewDelegate, UIPickerViewD
         self.submitProfNameFirebase(profName: selectedProf)
     }
     
+    //Refreshing tableview so updates can be reflected!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToCoursesListVC4" {
             let vc = segue.destination as! coursesListVC
             vc.viewDidAppear(false)
-        
         }
     }
     
@@ -119,8 +119,12 @@ class addProfVC: ViewControllerPannableHoriz,UIPickerViewDelegate, UIPickerViewD
 
     func submitProfNameFirebase(profName:String) {
         let WANTED_REF_PROFESSOR = DataService.instance.REF_COURSES.child(theCategorie).child(theCourse.ref).child("Prof")
+        let WANTED_REF_PROFDB_ADDCOURSE = DataService.instance.REF_PROFESSORS.child(profName).childByAutoId()
+        
+        WANTED_REF_PROFDB_ADDCOURSE.setValue(theCourse.ref)
 
         WANTED_REF_PROFESSOR.setValue(profName)
+        
 
     
     }

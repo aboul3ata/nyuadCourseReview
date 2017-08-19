@@ -107,7 +107,6 @@ class DataService{
             for x in reviewSnapshot {
                 profArray.append(x.key)
             }
-            
             handler(profArray)
         })
     }

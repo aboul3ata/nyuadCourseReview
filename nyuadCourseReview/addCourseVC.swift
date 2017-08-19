@@ -78,6 +78,8 @@ class addCourseVC: ViewControllerPannable, UIPickerViewDelegate, UIPickerViewDat
                 if let nameText = nameTxt.text {
                     if let profText = profTxt.text {
                         DataService.instance.addCourse(name: nameText, prof: profText, categorie: categorieText, code: codeText)
+                     let WANTED_REF_PROFDB_ADDCOURSE = DataService.instance.REF_PROFESSORS.child(profText).childByAutoId()
+                     WANTED_REF_PROFDB_ADDCOURSE.setValue(codeText)
                     }
                 }
             }
@@ -85,14 +87,16 @@ class addCourseVC: ViewControllerPannable, UIPickerViewDelegate, UIPickerViewDat
         self.performSegue(withIdentifier: "unwindToCoursesListVC3", sender: self)
     }
     
-
-
-        
     }
     
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToCoursesListVC4" {
+            let vc = segue.destination as! coursesListVC
+            vc.viewDidAppear(false)
+        }
+    }
     
     
     
