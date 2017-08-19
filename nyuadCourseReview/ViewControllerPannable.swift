@@ -28,7 +28,7 @@ class ViewControllerPannable: UIViewController {
             currentPositionTouched = panGesture.location(in: view)
         } else if panGesture.state == .changed {
             view.frame.origin = CGPoint(
-                x: translation.x,
+                x: self.view.frame.origin.x,
                 y: translation.y
             )
         } else if panGesture.state == .ended {
