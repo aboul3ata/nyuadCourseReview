@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class addCourseVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class addCourseVC: ViewControllerPannable, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var categoriePckr: UIPickerView!
 

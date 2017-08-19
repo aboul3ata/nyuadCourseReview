@@ -8,7 +8,7 @@
 
 import UIKit
 
-class viewCourseVC: UIViewController {
+class viewCourseVC: ViewControllerPannable {
     
     var traitsDict = [String:Int]()
     var numArray = [String]()

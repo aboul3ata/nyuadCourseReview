@@ -8,7 +8,7 @@
 
 import UIKit
 
-class writeReview: UIViewController {
+class writeReview: ViewControllerPannable {
 
     @IBOutlet weak var prof: UILabel!
     @IBOutlet weak var theTitle: UILabel!
