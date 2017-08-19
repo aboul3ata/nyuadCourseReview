@@ -10,6 +10,9 @@ import UIKit
 
 class ViewProfVC: UIViewController {
 
+    @IBOutlet weak var thumbsBadPic: UIImageView!
+    @IBOutlet weak var thumbsNeutralPic: UIImageView!
+    @IBOutlet weak var thumbsupPic: UIImageView!
     @IBOutlet weak var profTitle: UIButton!
     var selectedProf:String!
     @IBOutlet weak var tableView: UITableView!
@@ -52,6 +55,9 @@ class ViewProfVC: UIViewController {
             self.thumbsup.text = "\(Int(percentages["positive"]!))%"
             self.thumbsNeutral.text = "\(Int(percentages["neutral"]!))%"
             self.thumbsDown.text = "\(Int(percentages["negative"]!))%"
+            self.thumbsupPic.isHidden = false
+            self.thumbsNeutralPic.isHidden = false
+            self.thumbsBadPic.isHidden = false
             
         }
     }

@@ -318,7 +318,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51O-mK-ARz">
                                                     <rect key="frame" x="7" y="11" width="363" height="250"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital logic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60w-dv-Lsv">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital logic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="60w-dv-Lsv">
                                                             <rect key="frame" x="8" y="8" width="346" height="32.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
                                                             <color key="textColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1659,7 +1659,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvp-KF-7xw">
                                                     <rect key="frame" x="7" y="11" width="363" height="250"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital logic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH1-li-6Bz">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital logic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sH1-li-6Bz">
                                                             <rect key="frame" x="8" y="8" width="346" height="32.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
                                                             <color key="textColor" red="0.41481143240000001" green="0.123166047" blue="0.62114572530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1825,7 +1825,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-fc-USW">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.5" height="110"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsup" translatesAutoresizingMaskIntoConstraints="NO" id="99y-v0-7nd">
+                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsup" translatesAutoresizingMaskIntoConstraints="NO" id="99y-v0-7nd">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Wnj-VL-uz6"/>
@@ -1849,7 +1849,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lE6-3V-Mef">
                                                 <rect key="frame" x="91.5" y="0.0" width="92" height="110"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsneutral" translatesAutoresizingMaskIntoConstraints="NO" id="ZG0-T8-eV5">
+                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsneutral" translatesAutoresizingMaskIntoConstraints="NO" id="ZG0-T8-eV5">
                                                         <rect key="frame" x="21" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="3kF-2J-sLF"/>
@@ -1870,7 +1870,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="qo4-X8-W3Y">
                                                 <rect key="frame" x="183.5" y="0.0" width="91.5" height="110"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsdown" translatesAutoresizingMaskIntoConstraints="NO" id="WyY-Fi-Slr">
+                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsdown" translatesAutoresizingMaskIntoConstraints="NO" id="WyY-Fi-Slr">
                                                         <rect key="frame" x="41.5" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="0TB-xO-SzR"/>
@@ -1917,9 +1917,12 @@
                     <connections>
                         <outlet property="profTitle" destination="RLQ-Mi-wCm" id="KzO-j2-LeC"/>
                         <outlet property="tableView" destination="PvA-aT-Ry8" id="Uck-Ix-241"/>
+                        <outlet property="thumbsBadPic" destination="WyY-Fi-Slr" id="jqi-SH-aDR"/>
                         <outlet property="thumbsDown" destination="UrP-g5-fZD" id="2rq-mI-cKi"/>
                         <outlet property="thumbsNeutral" destination="7hR-mg-rjs" id="mYJ-l8-swa"/>
+                        <outlet property="thumbsNeutralPic" destination="ZG0-T8-eV5" id="Z1o-hW-QKE"/>
                         <outlet property="thumbsup" destination="hdp-I9-ABd" id="BK3-BF-n9x"/>
+                        <outlet property="thumbsupPic" destination="99y-v0-7nd" id="4mc-rX-PGg"/>
                         <segue destination="nHF-hd-sXu" kind="show" identifier="gotoViewCourse" id="u5a-02-P1i"/>
                         <segue destination="5eM-N0-bkR" kind="unwind" identifier="unwindToSelectProfVC" unwindAction="unwindToSelectProfVCWithSegue:" id="phw-t7-WXl"/>
                     </connections>
@@ -1944,7 +1947,7 @@
         <image name="thumbsup" width="98" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r5K-Ba-utR"/>
-        <segue reference="wIi-Ka-IH6"/>
+        <segue reference="kxB-Z2-zMZ"/>
+        <segue reference="u5a-02-P1i"/>
     </inferredMetricsTieBreakers>
 </document>
