@@ -15,6 +15,7 @@ class coursesListVC: ViewControllerPannableHoriz {
 
     @IBOutlet weak var catTitle: UIButton!
 
+    @IBOutlet weak var titleLabel: UILabel!
     //seguess for cancelling the other views and returning to this one
     @IBAction func unwindToCoursesListVC(segue: UIStoryboardSegue) {}
     @IBAction func unwindToCoursesListVC2(segue: UIStoryboardSegue) {}
@@ -41,7 +42,8 @@ class coursesListVC: ViewControllerPannableHoriz {
         tableView.delegate = self
         tableView.dataSource = self
         self.activityIndicator.startAnimating()
-        catTitle.setTitle(selectedCategorie, for: .normal)
+        //catTitle.setTitle(selectedCategorie, for: .normal)
+        titleLabel.text = selectedCategorie
     }
 
 
