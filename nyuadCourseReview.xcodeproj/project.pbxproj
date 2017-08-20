@@ -19,7 +19,8 @@
 		41421A661F3F838B00FD07EB /* HideKeyboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */; };
 		41421A681F3F885A00FD07EB /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41421A671F3F885A00FD07EB /* UIViewControllerExt.swift */; };
 		414451F71F48B73200C3CBF4 /* addProfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414451F61F48B73200C3CBF4 /* addProfVC.swift */; };
-		4162B2A91F41D6B20011158F /* testingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162B2A81F41D6B20011158F /* testingVC.swift */; };
+		414451F91F4905DB00C3CBF4 /* percentageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414451F81F4905DB00C3CBF4 /* percentageAlgorithm.swift */; };
+		414451FD1F4988E200C3CBF4 /* numExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414451FC1F4988E200C3CBF4 /* numExt.swift */; };
 		416471491F39DDD2006FB700 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416471481F39DDD2006FB700 /* DataService.swift */; };
 		41A291551F399F8F00BF08E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A291541F399F8F00BF08E3 /* AppDelegate.swift */; };
 		41A291571F399F8F00BF08E3 /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A291561F399F8F00BF08E3 /* landingVC.swift */; };
@@ -51,7 +52,8 @@
 		41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExt.swift; sourceTree = "<group>"; };
 		41421A671F3F885A00FD07EB /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		414451F61F48B73200C3CBF4 /* addProfVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addProfVC.swift; sourceTree = "<group>"; };
-		4162B2A81F41D6B20011158F /* testingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testingVC.swift; sourceTree = "<group>"; };
+		414451F81F4905DB00C3CBF4 /* percentageAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = percentageAlgorithm.swift; sourceTree = "<group>"; };
+		414451FC1F4988E200C3CBF4 /* numExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = numExt.swift; sourceTree = "<group>"; };
 		416471481F39DDD2006FB700 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		41A291511F399F8F00BF08E3 /* nyuadCourseReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nyuadCourseReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A291541F399F8F00BF08E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				41421A631F3F80F900FD07EB /* UIViewExt.swift */,
 				41421A651F3F838B00FD07EB /* HideKeyboardExt.swift */,
 				41421A671F3F885A00FD07EB /* UIViewControllerExt.swift */,
+				414451FC1F4988E200C3CBF4 /* numExt.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				41EEC22A1F3CBDCC0008E993 /* Review.swift */,
+				414451F81F4905DB00C3CBF4 /* percentageAlgorithm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -180,7 +184,6 @@
 				41421A601F3E783C00FD07EB /* writeReview.swift */,
 				41327C271F4070EE00CF745F /* viewCourseVC.swift */,
 				41327C2B1F40F1A900CF745F /* addCourseVC.swift */,
-				4162B2A81F41D6B20011158F /* testingVC.swift */,
 				41344C661F472EDB0077EE60 /* selectProfVC.swift */,
 				41344C681F473E2D0077EE60 /* ViewProfVC.swift */,
 				414451F61F48B73200C3CBF4 /* addProfVC.swift */,
@@ -331,16 +334,17 @@
 				41327C281F4070EE00CF745F /* viewCourseVC.swift in Sources */,
 				41344C691F473E2D0077EE60 /* ViewProfVC.swift in Sources */,
 				41A2915D1F399F8F00BF08E3 /* nyuadCourseReview.xcdatamodeld in Sources */,
+				414451F91F4905DB00C3CBF4 /* percentageAlgorithm.swift in Sources */,
 				41EEC22B1F3CBDCC0008E993 /* Review.swift in Sources */,
 				41A2916F1F39AE1300BF08E3 /* selectMajorVC.swift in Sources */,
 				41421A661F3F838B00FD07EB /* HideKeyboardExt.swift in Sources */,
 				41344C6B1F4774DB0077EE60 /* courseCell2.swift in Sources */,
 				41A291551F399F8F00BF08E3 /* AppDelegate.swift in Sources */,
+				414451FD1F4988E200C3CBF4 /* numExt.swift in Sources */,
 				41A291721F39AECE00BF08E3 /* Constants.swift in Sources */,
 				41EEC2271F3CB75C0008E993 /* coursesListVC.swift in Sources */,
 				41327C2C1F40F1A900CF745F /* addCourseVC.swift in Sources */,
 				41421A681F3F885A00FD07EB /* UIViewControllerExt.swift in Sources */,
-				4162B2A91F41D6B20011158F /* testingVC.swift in Sources */,
 				414451F71F48B73200C3CBF4 /* addProfVC.swift in Sources */,
 				41421A611F3E783C00FD07EB /* writeReview.swift in Sources */,
 				41327C2A1F40C6AA00CF745F /* reviewBodyCell.swift in Sources */,
@@ -471,6 +475,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZY2Y4GLDVL;
 				INFOPLIST_FILE = nyuadCourseReview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aboulatta.nyuadCourseReview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +493,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZY2Y4GLDVL;
 				INFOPLIST_FILE = nyuadCourseReview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aboulatta.nyuadCourseReview;
 				PRODUCT_NAME = "$(TARGET_NAME)";

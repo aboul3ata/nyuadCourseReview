@@ -42,8 +42,12 @@ class viewCourseVC: ViewControllerPannable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
         
         //Setting up the course title
         courseTitle.text = thecourse.name

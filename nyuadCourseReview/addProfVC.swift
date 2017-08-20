@@ -67,12 +67,12 @@ class addProfVC: ViewControllerPannableHoriz,UIPickerViewDelegate, UIPickerViewD
             
         }
     }
+        */
     
-    @IBAction func backpressed(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToLanding2", sender: nil)
+
+    @IBAction func backbtn(_ sender: Any) {
+                performSegue(withIdentifier: "unwindToCoursesListVC4", sender: nil)
     }
-    
-    */
     
     
     //MARK:- Setting up pickerView

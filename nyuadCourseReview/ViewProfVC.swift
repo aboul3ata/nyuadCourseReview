@@ -10,6 +10,11 @@ import UIKit
 
 class ViewProfVC: ViewControllerPannableHoriz {
 
+    
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     @IBOutlet weak var thumbsBadPic: UIImageView!
     @IBOutlet weak var thumbsNeutralPic: UIImageView!
     @IBOutlet weak var thumbsupPic: UIImageView!
@@ -20,11 +25,17 @@ class ViewProfVC: ViewControllerPannableHoriz {
     var wtdCourse:Review?
     
     @IBAction func unwindToCoursesListVC2(segue: UIStoryboardSegue) {}
-    @IBOutlet weak var thumbsDown: UILabel!
-    @IBOutlet weak var thumbsNeutral: UILabel!
-    @IBOutlet weak var thumbsup: UILabel!
+    @IBAction func unwindToViewProf(segue: UIStoryboardSegue) {}
     
+    @IBOutlet weak var overallLbl: UILabel!
+    @IBOutlet weak var workloadLbl: UILabel!
+    @IBOutlet weak var gradingLbl: UILabel!
     
+    @IBOutlet weak var gradingDescLbl: UILabel!
+    @IBOutlet weak var workloadDescLbl: UILabel!
+    @IBOutlet weak var overallDescLbl: UILabel!
+    
+    @IBOutlet weak var percentagesStack: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,33 +44,146 @@ class ViewProfVC: ViewControllerPannableHoriz {
         tableView.dataSource = self
         
             profTitle.setTitle(selectedProf, for: .normal)
-
+        self.activityIndicator.startAnimating()
         // Do any additional setup after loading the view.
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         //Loading data from Firebase
-        //DataService.instance.loadSpecificCourses(referenceArray: ["ACS-UH 2211","ACS-UH 1010X"])
         DataService.instance.loadSpecificCourses(prof:selectedProf) { (returnedReviewsArray) in
              self.reviewsArray = returnedReviewsArray.reversed()
             print(self.reviewsArray)
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             
             
             // setting up the percentages titles!
             // Int method to remove decimal point!
-            let percentages = self.recommendedPercentages(reviews: self.reviewsArray)
+            let percentages = percentageAlgorithm(reviews: self.reviewsArray)
             print("ALI PERCENTAGES ARE \(percentages) \(self.reviewsArray[0].traits)")
-            self.thumbsup.text = "\(Int(percentages["positive"]!))%"
-            self.thumbsNeutral.text = "\(Int(percentages["neutral"]!))%"
-            self.thumbsDown.text = "\(Int(percentages["negative"]!))%"
-            self.thumbsupPic.isHidden = false
-            self.thumbsNeutralPic.isHidden = false
-            self.thumbsBadPic.isHidden = false
             
-        }
+            
+            //SET UP FIRST PERCENTAGE:GRADING
+            if let gradingTraitDouble = percentages["grading"] {
+            let gradingTraitInt = gradingTraitDouble.rounded(toPlaces: 1)
+            
+            
+                // 13 is special number given out by the algorithms
+                // in case value not available
+                if gradingTraitDouble == 13.0 {
+                self.gradingLbl.text = " "
+                } else {
+            self.gradingLbl.text = "\(gradingTraitInt)/10"
+                }
+            
+                
+                switch gradingTraitInt {
+                
+                case 0.0...4.0:
+                    self.thumbsupPic.image = UIImage(named: "thumbsdown")
+                    self.gradingDescLbl.text = "'Harsh'"
+                case 4.0...8.0:
+                    self.thumbsupPic.image = UIImage(named: "thumbsneutral")
+                    self.gradingDescLbl.text = "'Fair'"
+                    
+                case 8.0...10.0:
+                    self.thumbsupPic.image = UIImage(named: "thumbsup")
+                    self.gradingDescLbl.text = "'Easy A'"
+                default:
+                    self.thumbsupPic.image = UIImage(named: "thumbsna")
+                    self.gradingDescLbl.text = "N/A"
+                }
+
+                
+            } // END OF GRADING SETUP
+            
+            
+            
+            //SET UP SECOND PERCENTAGE:Workload
+            if let workloadTraitDouble = percentages["workload"] {
+                let workloadTraitInt = workloadTraitDouble.rounded(toPlaces: 1)
+                
+                
+                // 13 is special number given out by the algorithms
+                // in case value not available
+                if workloadTraitDouble == 13.0 {
+                    self.workloadLbl.text = " "
+                } else {
+                    self.workloadLbl.text = "\(workloadTraitInt)/10"
+                }
+                
+                
+                switch workloadTraitInt {
+                    
+                case 0.0...4.0:
+                    self.thumbsNeutralPic.image = UIImage(named: "thumbsdown")
+                    self.workloadDescLbl.text = "'Heavy!'"
+                case 4.0...8.0:
+                    self.thumbsNeutralPic.image = UIImage(named: "thumbsneutral")
+                    self.workloadDescLbl.text = "'Medium'"
+                    
+                case 8.0...10.0:
+                    self.thumbsNeutralPic.image = UIImage(named: "thumbsup")
+                    self.workloadDescLbl.text = "'Light'"
+                default:
+                    self.thumbsNeutralPic.image = UIImage(named: "thumbsna")
+                    self.workloadDescLbl.text = "N/A"
+                }
+                
+                
+            } // END OF Workload SETUP
+            
+            
+            
+            //SET UP THIRD PERCENTAGE:OVERALL
+            if let overallTraitDouble = percentages["overall"] {
+                let overallTraitInt = overallTraitDouble.rounded(toPlaces: 1)
+                
+                
+                // 13 is special number given out by the algorithms
+                // in case value not available
+                if overallTraitDouble == 13.0 {
+                    self.overallLbl.text = " "
+                } else {
+                    self.overallLbl.text = "\(overallTraitInt)/10"
+                }
+                
+                
+                switch overallTraitInt {
+                    
+                case 0.0...4.0:
+                    self.thumbsBadPic.image = UIImage(named: "thumbsdown")
+                    self.overallDescLbl.text = "'Horrible'"
+                case 4.0...8.0:
+                    self.thumbsBadPic.image = UIImage(named: "thumbsneutral")
+                    self.overallDescLbl.text = "'O.K'"
+                    
+                case 8.0...10.0:
+                    self.thumbsBadPic.image = UIImage(named: "thumbsup")
+                    self.overallDescLbl.text = "'Amazing'"
+                default:
+                    self.thumbsBadPic.image = UIImage(named: "thumbsna")
+                    self.overallDescLbl.text = "N/A"
+                }
+                
+                
+            } // END OF Overall SETUP
+            
+            
+            self.percentagesStack.isHidden = false
+            
+            
+            
+            
+            
+            
+            
+
+        }//end of closure for Firebase
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,45 +196,6 @@ class ViewProfVC: ViewControllerPannableHoriz {
         self.performSegue(withIdentifier: "unwindToSelectProfVC", sender: self)
     }
 
-    //Calculating the different percentages for each trait
-    // for thumbs up image
-    func recommendedPercentages(reviews:[Review]) -> [String:Double]{
-        var positive = 0.0
-        var neutral = 0.0
-        var negative = 0.0
-
-        for review in reviews {
-            for (onetrait,num) in review.traits{
-                let clrIndicator = String(onetrait[onetrait.startIndex])
-                if clrIndicator == "p" {
-                    positive += Double(num)
-                
-                }
-            
-                if clrIndicator == "n" {
-                
-                    neutral += Double(num)
-                
-                }
-                
-                if clrIndicator == "b" {
-                    
-                    negative += Double(num)
-                }
-            }
-        }
-        let total = negative + positive + neutral
-        
-        // This if is needed cuz if total is zero
-        //0 divided by zero gives an error
-        if total == 0 {
-                let percentagesDict = ["positive":0.0,"neutral":0.0,"negative":0.0]
-                return percentagesDict
-        } else{
-        let percentagesDict = ["positive":round(((positive*100.0)/total)),"neutral":round(((neutral*100.0)/total)),"negative":round(((negative*100.0)/total))]
-        return percentagesDict
-        }
-    }
     
 
     
@@ -130,7 +215,7 @@ class ViewProfVC: ViewControllerPannableHoriz {
             if let wantedCourse = wtdCourse {
                 vc2.thecourse = wantedCourse
                 // getting th category from reference of course as its seperated by space
-                vc2.selectedCategorie = majorsReversed[wantedCourse.ref.components(separatedBy: " ").first!]
+                vc2.selectedCategorie = wantedCourse.ref.components(separatedBy: " ").first!
             }
             
         }
@@ -141,13 +226,9 @@ class ViewProfVC: ViewControllerPannableHoriz {
             let vc = segue.destination as! writeReview
             let btn = sender as! UIButton
             wtdCourse = reviewsArray[btn.tag]
-            print("ALI WANTED COURE IS\(wtdCourse)")
             if let wantedCourse2 = wtdCourse {
-                print("ALi inside prepare for segue")
                 vc.theCourse = wantedCourse2
-                
-                // getting th category from reference of course as its seperated by space
-                vc.theCategorie = majorsReversed[wantedCourse2.ref.components(separatedBy: " ").first!]
+                vc.theCategorie = wantedCourse2.ref.components(separatedBy: " ").first!
             }
             
         }

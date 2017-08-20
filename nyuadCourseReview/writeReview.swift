@@ -31,6 +31,7 @@ class writeReview: ViewControllerPannable {
         super.viewDidLoad()
         self.hideKeyboard()
         textView.delegate = self
+        print(theCategorie)
         if let theCourse = theCourse {
             prof.text = " by \(theCourse.prof)"
             theTitle.text = theCourse.name
